@@ -1,0 +1,2579 @@
+<!DOCTYPE html>
+<html>
+<!-- PLEASE DO NOT STEAL MY CODE! Thank You :3 -->
+   <head>
+      <style>
+         .outline {
+         filter: drop-shadow(1px 1px 0 purple) 
+         drop-shadow(-1px 1px 0 purple) 
+         drop-shadow(0 2px 0 purple) 
+         drop-shadow(0 -1px 0 purple) 
+         drop-shadow(0 1px 1.5px purple) 
+         drop-shadow(0 -1px 1.5px purple) 
+         drop-shadow(1px -1px 1.5px purple) 
+         drop-shadow(-1px -1px 1.5px purple);     
+         }
+         #disc-collection * {
+         all: unset;
+         }
+         #disc-collection {
+         all: initial!important;
+         width: 100%!important;
+         height: 240px!important;
+         margin: 30px 0!important;
+         display: flex!important;
+         flex-direction: row!important;
+         position: relative!important;
+         margin-left: 2px!important;
+         }
+         #disc-collection .disc {
+         all:unset!important;
+         perspective: 500px !important;
+         width: 20px!important;
+         transition: width 0.5s!important;
+         }
+         #disc-collection .disc:hover {
+         width: 180px!important;
+         }
+         #disc-collection img {
+         all:unset!important;
+         transition: transform 0.5s, width 0.5s, height 0.5s, margin-top 0.5s!important;
+         width: 183px!important;
+         height: 180px!important;
+         transform: rotateX(0deg) rotateY(5deg)!important;
+         transform-style: preserve-3d!important;
+         border-radius: 4px!important;
+         border: 2px solid rgba(0, 0, 0, 0.1)!important;
+         margin-left: 20px!important;
+         object-fit: cover!important;
+         }
+         #disc-collection .disc:after {
+         content: "";
+         background: url('https://fluorescent-lights.neocities.org/f0rzNHe.png'), 
+         linear-gradient(150deg, rgba(255,255,255,0.4), rgba(255,255,255,0.2), 40%, 
+         rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.6));
+         background-size: contain, cover;
+         position: absolute;
+         top: 0;
+         left: 0;
+         transition: transform 0.5s, width 0.5s, height 0.5s, margin-top 0.5s!important;
+         width: 210px!important;
+         height: 183px!important;
+         transform: rotateX(0deg) rotateY(5deg)!important;
+         transform-style: preserve-3d!important;
+         border: 0px solid rgba(0, 0, 0, 0)!important;
+         object-fit: cover!important;
+         }
+         #disc-collection .disc:hover img {
+         transform: rotateX(0deg) rotateY(1deg)!important;
+         width: 183px!important;
+         height: 180px!important;
+         margin-top: -25px!important;
+         margin-left: 20px!important;
+         }
+         #disc-collection .disc:hover:after {
+         transform: rotateX(0deg) rotateY(1deg)!important;
+         width: 210px!important;
+         height: 183px!important;
+         margin-top: -25px!important;
+         }
+         #disc-collection .title {
+         color: #000000;
+         display: block;
+         visibility: hidden;
+         position: absolute;
+         bottom: 0px;
+         text-align: center;
+         width: 100%;
+         padding-left: 6px;
+         }
+         #disc-collection .disc:nth-child(n):hover + .title {
+         visibility: visible;
+         }
+         #italic:hover{ 
+         font-style: italic;
+         }  
+         :root {
+         --titlebar-gradient: linear-gradient(90deg, #6a1535, #b23965, #f9a5b9);
+         --dialog-blue: #6a1535;
+         --dialog-accent: white; 
+         --titlebar-color: white;
+         --player-image: url(/graphics/graphicspinningcd.gif);
+         --surface: #c0c0c0;
+         --button-highlight: #ffffff;
+         --button-face: #dfdfdf;
+         --button-shadow: #808080;
+         --light-button-shadow: #a9a9a9;
+         --window-frame: #0a0a0a;
+         --border-field: inset -1px -1px var(--button-highlight),
+         inset 1px 1px var(--button-shadow), inset -2px -2px var(--button-face),
+         inset 2px 2px var(--window-frame);
+         }
+         @font-face {
+         font-family: "Pixelated MS Sans Serif";
+         src: url("https://files.catbox.moe/qgjjre.woff") format("woff");
+         src: url("https://files.catbox.moe/8fwbkl.woff2") format("woff2");
+         font-weight: normal;
+         font-style: normal;
+         }
+         @font-face {
+         font-family: "Pixelated MS Sans Serif";
+         src: url("https://files.catbox.moe/z7csle.woff") format("woff");
+         src: url("https://files.catbox.moe/moqhx6.woff2") format("woff2");
+         font-weight: bold;
+         font-style: normal;
+         }
+         #musicplayer {
+         font-family: "Pixelated MS Sans Serif", Arial;
+         -webkit-font-smoothing: none;
+         font-size: 11px;
+         color:var(--window-frame);
+         width: fit-content;
+         border:var(--window-frame) solid 1px;
+         margin:0 auto;
+         box-shadow: inset -1px -1px var(--window-frame), inset 1px 1px var(--button-face), inset -2px -2px var(--button-shadow), inset 2px 2px var(--button-highlight);
+         background: var(--surface);
+         padding: 3px;
+         width: 260px;
+         }
+         .title-color {  
+         padding: 3px 2px 3px 3px;
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         background: var(--titlebar-gradient);
+         margin-bottom: 2px;
+         font-weight: bold;
+         }
+         .actual-title {
+         color:var(--titlebar-color);
+         display: flex;
+         gap: 5px;
+         }
+         .seeking {
+         font-weight: normal;
+         font-size: 11px;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         gap: 5px;
+         margin: 12px 0;
+         }
+         .player-flex {
+         display: flex;
+         gap: 3px;
+         }
+         .player-main {
+         width: calc(100% - 100px);
+         margin-top: 1px;
+         }
+         .player-icon-holder {
+         border: 2px solid var(--surface);
+         width:95px;
+         height:95px;
+         padding: 1px;
+         background-image:linear-gradient(to bottom, black, darkgray, gray, lightgray);
+         background-size:cover;
+         background-repeat:no-repeat;
+         border-width:1px;
+         border-style:solid;
+         border-color: var(--button-shadow) var(--button-highlight) var(--button-highlight) var(--button-shadow);
+         overflow: hidden;
+         position:relative;
+         z-index: 2;
+         }
+         .player-icon {
+         background-image:var(--player-image);
+         background-size: contain;
+         background-repeat: no-repeat;
+         width:95px;
+         height:95px;
+         display: display;
+         }
+         .track-select {
+         appearance: none;
+         -webkit-appearance: none;
+         -moz-appearance: none;
+         border: none;
+         border-radius:0;
+         box-sizing: border-box;
+         outline:0;
+         text-overflow: ellipsis;
+         overflow: hidden;
+         white-space: nowrap;
+         position: relative;
+         padding: 3px 4px;
+         padding-right: 32px;
+         background-image: url("https://loveberry.nekoweb.org/assets/musicplayer/button-down.svg");
+         background-position: top 2px right 2px;
+         background-repeat: no-repeat;
+         width:100%;
+         box-shadow: var(--border-field);
+         background-color: var(--button-highlight);
+         height: 21px;
+         font-family: "Pixelated MS Sans Serif", Arial;
+         -webkit-font-smoothing: none;
+         font-size: 11px;
+         font-weight: lighter;
+         }
+         .track-select:focus {
+         color: var(--dialog-accent);
+         background-color: var(--dialog-blue);
+         }
+         .track-select:focus option {
+         color: var(--window-frame);
+         background-color: var(--button-highlight);  
+         outline: 1px;
+         border: none;
+         }
+         .track-select:active {
+         background-image: url("https://loveberry.nekoweb.org/assets/musicplayer/button-down-active.svg");
+         }
+         #musicplayer input[type="range"] {  
+         appearance: none;
+         -webkit-appearance: none;
+         width: 100%;
+         background: transparent;
+         }
+         #musicplayer input[type="range"]:focus {
+         outline: none;
+         }
+         #musicplayer input[type="range"]::-webkit-slider-thumb {
+         appearance: none;
+         -webkit-appearance: none;
+         height: 21px;
+         width: 11px;
+         background: url("https://loveberry.nekoweb.org/assets/musicplayer/indicator-horizontal.svg");
+         transform: translateY(-8px);
+         box-shadow: none;
+         border: none;
+         }
+         #musicplayer input[type="range"].has-box-indicator::-webkit-slider-thumb {
+         background: url("https://loveberry.nekoweb.org/assets/musicplayer/indicator-rectangle-horizontal.svg");
+         transform: translateY(-10px);
+         }
+         #musicplayer input[type="range"]::-moz-range-thumb {
+         height: 21px;
+         width: 11px;
+         border: 0;
+         border-radius: 0;
+         background: url("https://loveberry.nekoweb.org/assets/musicplayer/indicator-horizontal.svg");
+         transform: translateY(2px);
+         }
+         #musicplayer input[type="range"].has-box-indicator::-moz-range-thumb {
+         background: url("https://loveberry.nekoweb.org/assets/musicplayer/indicator-rectangle-horizontal.svg");
+         transform: translateY(0px);
+         }
+         #musicplayer input[type="range"]::-webkit-slider-runnable-track {
+         width: 100%;
+         height: 2px;
+         box-sizing: border-box;
+         background: var(--window-frame);
+         border-right: 1px solid var(--button-shadow);
+         border-bottom: 1px solid var(--button-shadow);
+         box-shadow: 1px 0 0 var(--button-highlight), 1px 1px 0 var(--button-highlight), 0 1px 0 var(--button-highlight), -1px 0 0 var(--light-button-shadow),
+         -1px -1px 0 var(--light-button-shadow), 0 -1px 0 var(--light-button-shadow), -1px 1px 0 var(--button-highlight), 1px -1px var(--light-button-shadow);
+         }
+         #musicplayer input[type="range"]::-moz-range-track {
+         width: 100%;
+         height: 2px;
+         box-sizing: border-box;
+         background: var(--window-frame);
+         border-right: 1px solid var(--button-shadow);
+         border-bottom: 1px solid var(--button-shadow);
+         box-shadow: 1px 0 0 var(--button-highlight), 1px 1px 0 var(--button-highlight), 0 1px 0 var(--button-highlight), -1px 0 0 var(--light-button-shadow),
+         -1px -1px 0 var(--light-button-shadow), 0 -1px 0 var(--light-button-shadow), -1px 1px 0 var(--button-highlight), 1px -1px var(--light-button-shadow);
+         }
+         .window-button {
+         background: var(--surface);
+         border: none;
+         border-radius: 0;
+         box-shadow: inset -1px -1px var(--window-frame),inset 1px 1px var(--button-highlight),inset -2px -2px var(--button-shadow),inset 2px 2px var(--button-face);
+         box-sizing: border-box;
+         color: inherit;
+         text-shadow: 0 0 var(--window-frame);
+         }
+         .window-button:active {
+         box-shadow: inset -1px -1px var(--button-highlight), inset 1px 1px var(--window-frame), inset -2px -2px var(--button-face), inset 2px 2px var(--button-shadow);
+         text-shadow: 1px 1px var(--window-frame);
+         }
+         .window-button:focus  {
+         outline: 1px dotted #000;
+         outline-offset: -4px;
+         }
+         .player-buttons {
+         display: flex;
+         gap: 10px;
+         margin: 5px 5px 0 5px;
+         }
+         .player-buttons .window-button  {
+         width: 33%;
+         font-size: 10px;
+         padding: 5px 10px;
+         }
+         .player-buttons .window-button svg {
+         width: 15px;
+         height: 15px;
+         }
+         .title-bar-controls {
+         display: flex;
+         }
+         .close {
+         margin-left: 2px;
+         background-image: url("https://loveberry.nekoweb.org/assets/musicplayer/close.svg");
+         background-repeat: no-repeat;
+         background-position: top 3px left 4px;
+         padding: 0;
+         display: block;
+         min-width: 16px;
+         min-height: 14px;
+         }
+         .minimize {
+         background-image: url("https://loveberry.nekoweb.org/assets/musicplayer/minimize.svg");
+         background-repeat: no-repeat;
+         background-position: bottom 3px left 4px;
+         padding: 0;
+         display: block;
+         min-width: 16px;
+         min-height: 14px;
+         }
+         .maximize {
+         background-image: url("https://loveberry.nekoweb.org/assets/musicplayer/maximize.svg");
+         background-repeat: no-repeat;
+         background-position: top 2px left 3px;
+         padding: 0;
+         display: block;
+         min-width: 16px;
+         min-height: 14px;
+         }
+         .pinky {
+         border-width:8px;
+         border-style:solid;
+         border-image: url("https://i.ibb.co/h1Q3bFn/83-B27704-CEA1-4-B8-F-BF79-90-D624-EDC6-F6.png") 8 fill round;
+         }
+         }
+         @keyframes flicker {
+         0% {
+         opacity: 0.27861;
+         }
+         5% {
+         opacity: 0.34769;
+         }
+         10% {
+         opacity: 0.23604;
+         }
+         15% {
+         opacity: 0.90626;
+         }
+         20% {
+         opacity: 0.18128;
+         }
+         25% {
+         opacity: 0.83891;
+         }
+         30% {
+         opacity: 0.65583;
+         }
+         35% {
+         opacity: 0.67807;
+         }
+         40% {
+         opacity: 0.26559;
+         }
+         45% {
+         opacity: 0.84693;
+         }
+         50% {
+         opacity: 0.96019;
+         }
+         55% {
+         opacity: 0.08594;
+         }
+         60% {
+         opacity: 0.20313;
+         }
+         65% {
+         opacity: 0.71988;
+         }
+         70% {
+         opacity: 0.53455;
+         }
+         75% {
+         opacity: 0.37288;
+         }
+         80% {
+         opacity: 0.71428;
+         }
+         85% {
+         opacity: 0.70419;
+         }
+         90% {
+         opacity: 0.7003;
+         }
+         95% {
+         opacity: 0.36108;
+         }
+         100% {
+         opacity: 0.24387;
+         }
+         }
+         @keyframes textShadow {
+         0% {
+         text-shadow: 0.4389924193300864px 0 1px rgba(0,30,255,0.5), -0.4389924193300864px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+         }
+         5% {
+         text-shadow: 2.7928974010788217px 0 1px rgba(0,30,255,0.5), -2.7928974010788217px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+         }
+         10% {
+         text-shadow: 0.02956275843481219px 0 1px rgba(0,30,255,0.5), -0.02956275843481219px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+         }
+         15% {
+         text-shadow: 0.40218538552878136px 0 1px rgba(0,30,255,0.5), -0.40218538552878136px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+         }
+         20% {
+         text-shadow: 3.4794037899852017px 0 1px rgba(0,30,255,0.5), -3.4794037899852017px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+         }
+         25% {
+         text-shadow: 1.6125630401149584px 0 1px rgba(0,30,255,0.5), -1.6125630401149584px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+         }
+         30% {
+         text-shadow: 0.7015590085143956px 0 1px rgba(0,30,255,0.5), -0.7015590085143956px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+         }
+         35% {
+         text-shadow: 3.896914047650351px 0 1px rgba(0,30,255,0.5), -3.896914047650351px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+         }
+         40% {
+         text-shadow: 3.870905614848819px 0 1px rgba(0,30,255,0.5), -3.870905614848819px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+         }
+         45% {
+         text-shadow: 2.231056963361899px 0 1px rgba(0,30,255,0.5), -2.231056963361899px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+         }
+         50% {
+         text-shadow: 0.08084290417898504px 0 1px rgba(0,30,255,0.5), -0.08084290417898504px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+         }
+         55% {
+         text-shadow: 2.3758461067427543px 0 1px rgba(0,30,255,0.5), -2.3758461067427543px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+         }
+         60% {
+         text-shadow: 2.202193051050636px 0 1px rgba(0,30,255,0.5), -2.202193051050636px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+         }
+         65% {
+         text-shadow: 2.8638780614874975px 0 1px rgba(0,30,255,0.5), -2.8638780614874975px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+         }
+         70% {
+         text-shadow: 0.48874025155497314px 0 1px rgba(0,30,255,0.5), -0.48874025155497314px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+         }
+         75% {
+         text-shadow: 1.8948491305757957px 0 1px rgba(0,30,255,0.5), -1.8948491305757957px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+         }
+         80% {
+         text-shadow: 0.0833037308038857px 0 1px rgba(0,30,255,0.5), -0.0833037308038857px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+         }
+         85% {
+         text-shadow: 0.09769827255241735px 0 1px rgba(0,30,255,0.5), -0.09769827255241735px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+         }
+         90% {
+         text-shadow: 3.443339761481782px 0 1px rgba(0,30,255,0.5), -3.443339761481782px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+         }
+         95% {
+         text-shadow: 2.1841838852799786px 0 1px rgba(0,30,255,0.5), -2.1841838852799786px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+         }
+         100% {
+         text-shadow: 2.6208764473832513px 0 1px rgba(0,30,255,0.5), -2.6208764473832513px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+         }
+         }
+         .crt::after {
+         content: " ";
+         display: block;
+         position: fixed;
+         top: 0;
+         left: 0;
+         bottom: 0;
+         right: 0;
+         background: rgba(18, 16, 16, 0.1);
+         opacity: 0;
+         z-index: 2;
+         pointer-events: none;
+         animation: flicker 0.15s infinite;
+         }
+         .crt::before {
+         content: " ";
+         display: block;
+         position: fixed;
+         top: 0;
+         left: 0;
+         bottom: 0;
+         right: 0;
+         background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+         z-index: 2;
+         background-size: 100% 2px, 3px 100%;
+         pointer-events: none;
+         }
+         .crt {
+         animation: textShadow 1.6s infinite;
+         }
+         .collapsible {
+         }
+         @font-face {
+         font-family: Windows; 
+         src: url(https://computersoda.neocities.org/misc_files/Windows.ttf); 
+         }
+         .draggable {
+         position: absolute;
+         overflow: auto;
+         }
+         a:hover {
+         color: purple;
+         }
+         .interacttext{
+         transition: 0.5s;
+         }
+         .interacttext:hover{
+         letter-spacing: 7px;
+         }
+         #sodabounce {
+         -webkit-animation: pop 1s ease-in-out infinite alternate;
+         animation: pop 1s ease-in-out infinite alternate;
+         -moz-animation: pop 1s ease-in-out infinite alternate;
+         }
+         @keyframes pop {
+         from {
+         transform:scale(0.95)
+         }
+         50% {
+         transform:scale(1)
+         }
+         to {
+         transform:scale(0.95)
+         }
+         }
+         @-webkit-keyframes pop {
+         from {
+         -webkit-transform:scale(0.95)
+         }
+         50% {
+         -webkit-transform:scale(1)
+         }
+         to {
+         -webkit-transform:scale(0.95)
+         }
+         }
+         #vinyl-gallery * {
+         all: unset;
+         }
+         #vinyl-gallery {
+         all: initial;
+         width: 100%;
+         height: 230px;
+         margin: 30px 0;
+         display: flex;
+         flex-direction: row;
+         position: relative;
+         margin-left: -6px;
+         }
+         #vinyl-gallery .vinyl {
+         perspective: 500px !important;
+         width: 18px;
+         transition: width 0.5s;
+         }
+         #vinyl-gallery .vinyl:hover {
+         width: 148px;
+         }
+         #vinyl-gallery img {
+         transition: transform 0.5s, width 0.5s, height 0.5s, margin-top 0.5s;
+         width: 180px;
+         height: 180px;
+         transform: rotateX(0deg) rotateY(25deg);
+         transform-style: preserve-3d;
+         border-radius: 4px;
+         border: 2px solid rgba(0, 0, 0, 0.1);
+         }
+         #vinyl-gallery .vinyl:hover img {
+         transform: rotateX(0deg) rotateY(10deg);
+         width: 188px;
+         height: 188px;
+         margin-top: -2px;
+         }
+         #vinyl-gallery .title {
+         display: block;
+         visibility: hidden;
+         position: absolute;
+         bottom: 0px;
+         text-align: center;
+         width: 100%;
+         padding-left: 6px;
+         }
+         #vinyl-gallery .vinyl:nth-child(n):hover + .title {
+         visibility: visible;
+         }
+         #text:hover{ 
+         transition: .2s ease;
+         transform: translate(0, -12px);
+         }  
+         body {
+         cursor: url("/icons/cursor.ico"), default;
+         }
+         body {
+         background-image:url('/backgrounds/stars.png');
+         }
+         head {
+         background-image:url('/backgrounds/stars.png');
+         }
+         .topnav {
+         background-color: gray;
+         background-image: linear-gradient(to bottom, DarkGray, LightGray);
+         overflow: hidden;
+         border-style: outset;
+         border-width: 0.3vw; thick;
+         border-color: LightGray;
+         border-radius: 1vw;
+         text-shadow: 0.1vw 0.1vw red;
+         font-weight: bold;
+         font-family: "Courier New"
+         }
+         .topnav a {
+         float: left;
+         color: black;
+         text-align: center;
+         padding: 0.5vw 1vw;
+         text-decoration: none;
+         font-size: 1vw;
+         }
+         .topnav a:hover {
+         background-image: linear-gradient(to bottom, black, gray);
+         color: black;
+         }
+         .topnav a.active {
+         background-color: DimGray;
+         background-image: linear-gradient(to bottom, DimGray, DarkGray);
+         color: black;
+         }
+         h1 {
+         text-shadow: 0.2vw 0.2vw 0.3vw lime;
+         font-family: "Stencil"
+         }
+         p {
+         font-family: "Stencil"
+         }
+         .box {
+         width: 40vw;
+         height: 50vw
+         padding: 0vw;
+         border: 2vw ;
+         margin-top: 1.5vw;
+         margin-left: 0.5vw;
+         margin-right: 1vw;
+         margin-bottom: 1vw;
+         background-image: linear-gradient(to bottom, gray, lightgray);
+         border-style: outset;
+         border-width: 0.3vw; thick;
+         border-color: LightGray;
+         border-radius: 1vw;
+         overflow: auto;
+         }
+         .flex-container {
+         display: flex; 
+         flex-direction: row; 
+         justify-content: space-around; 
+         align-items: flex-start; 
+         }
+         ::-webkit-scrollbar {
+         width: 1vw;
+         height: 3vw;
+         }
+         ::-webkit-scrollbar-track {
+         background-color: lightgray;
+         image-rendering: pixelated;
+         -webkit-filter: grayscale(100%);
+         -moz-filter: grayscale(100%);
+         -ms-filter: grayscale(100%);
+         -o-filter: grayscale(100%);
+         filter: grayscale(100%);
+         }
+         ::-webkit-scrollbar-track:active {
+         background-color: lightgray;
+         -webkit-filter: grayscale(100%);
+         -moz-filter: grayscale(100%);
+         -ms-filter: grayscale(100%);
+         -o-filter: grayscale(100%);
+         filter: grayscale(100%);
+         }
+         ::-webkit-scrollbar-thumb {
+         border-top: 0.1vw solid #cccccc;
+         border-left: 0.1vw solid #cccccc;
+         border-right: 0.1vw solid black;
+         border-bottom: 0.1vw solid black;
+         box-shadow: inset 0.1vw 0.1vw 0 0 white, inset -0.1vw -0.1vw 0 0 #868a8e;
+         width: 1vw;
+         height: 1vw;
+         background-color: #cccccc;
+         z-index: 1;
+         }
+         ::-webkit-scrollbar-corner {
+         background-color: #cccccc;
+         }
+         ::-webkit-resizer {
+         width: 1vw;
+         height: 1vw;
+         background-color: #cccccc;
+         background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAN0lEQVR4Ae3MgQUAMBRDwU5fFF05lb/CARTBw2Ulof0DxPtcwp3hNuEYnjbcEW4TjuFpwx3h9gMWGgZ2Y/PT2gAAAABJRU5ErkJggg==");
+         background-position: bottom right;
+         background-repeat: no-repeat;
+         image-rendering: pixelated;
+         }
+         ::-webkit-scrollbar-button,
+         .scroll::-webkit-scrollbar-button {
+         border-top: 0.1vw solid #cccccc;
+         border-left: 0.1vw solid #cccccc;
+         border-right: 0.1vw solid black;
+         border-bottom: 0.1vw solid black;
+         box-shadow: inset 0.1vw 0.1vw 0 0 white, inset -0.1vw -0.1vw 0 0 #868a8e;
+         display: block;
+         width: 1px;
+         height: 16px;
+         background-color: #cccccc;
+         image-rendering: pixelated;
+         background-repeat: no-repeat;
+         background-position: center center;
+         }
+         ::-webkit-scrollbar-button:active,
+         .scroll::-webkit-scrollbar-button:active {
+         background-position: 2vw 2vw;
+         }
+         ::-webkit-scrollbar-button:horizontal:decrement,
+         .scroll::-webkit-scrollbar-button:horizontal:decrement {
+         background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAQAAAD8fJRsAAAAHklEQVQY02NgoBT8xyX8H5fwf1zCpOjAYwceV1EEAAO2D/HsQ4vsAAAAAElFTkSuQmCC");
+         }
+         ::-webkit-scrollbar-button:horizontal:increment,
+         .scroll::-webkit-scrollbar-button:horizontal:increment {
+         background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAQAAAD8fJRsAAAAHUlEQVQY02NgIB/8xy3xH7fEf9wS/0nUQZqrKAYAK44P8ZRmzLQAAAAASUVORK5CYII=");
+         }
+         ::-webkit-scrollbar-button:vertical:decrement,
+         .scroll::-webkit-scrollbar-button:vertical:decrement {
+         background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAAGklEQVR4AWMYxuA/SYphmETFhDX9x4mHGQAAcL4P8dQiMq8AAAAASUVORK5CYII=");
+         }
+         ::-webkit-scrollbar-button:vertical:increment,
+         .scroll::-webkit-scrollbar-button:vertical:increment {
+         background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAQAAAD8fJRsAAAAF0lEQVQY02NgoBf4jwJxSOHQhcNAOgMAWWAP8Rv2U3UAAAAASUVORK5CYII=");
+         }
+         ::-webkit-scrollbar-button:horizontal:increment:start,
+         .scroll::-webkit-scrollbar-button:horizontal:increment:start {
+         display: none;
+         }
+         ::-webkit-scrollbar-button:horizontal:decrement:end,
+         .scroll::-webkit-scrollbar-button:horizontal:decrement:end {
+         display: none;
+         }
+         ::-webkit-scrollbar-button:vertical:increment:start,
+         .scroll::-webkit-scrollbar-button:vertical:increment:start {
+         display: none;
+         }
+         ::-webkit-scrollbar-button:vertical:decrement:end,
+         .scroll::-webkit-scrollbar-button:vertical:decrement:end {
+         display: none;
+         }
+         ::-webkit-scrollbar-button:active,
+         .scroll::-webkit-scrollbar-button:active {
+         border-top: 0.1vw solid #868a8e;
+         border-left: 0.1vw solid #868a8e;
+         border-bottom: 0.1vw solid #868a8e;
+         border-right: 0.1vw solid #868a8e;
+         box-shadow: none;
+         }
+         footer {
+         text-align: center;
+         padding: 1vw;
+         border: 2vw ;
+         margin-top: 0.5vw;
+         margin-left: 0.5vw;
+         margin-right: 1vw;
+         margin-bottom: 1vw;
+         background-image: linear-gradient(to bottom, gray, lightgray);
+         border-style: outset;
+         border-width: 0.3vw; thick;
+         border-color: LightGray;
+         border-radius: 1vw;
+         overflow: auto;
+         }
+         .container {
+         display: flex;
+         }
+      </style>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link
+         rel="stylesheet"
+         href="https://unpkg.com/98.css"
+         >
+      <title>Music</title>
+      <link rel="icon"  href="/icons/favicon.ico">
+   </head>
+   <body class="crt">
+      <div class="window draggable" style="width: 20vw;height: 10vw">
+         <div class="title-bar">
+            <div  class="title-bar-text">Agony Girl Music Updates:</div>
+            <div class="title-bar-controls">
+               <button  aria-label="Minimize"></button>
+               <button aria-label="Maximize"></button>
+               <button  aria-label="Close"></button>
+            </div>
+         </div>
+         <div class="window-body">
+            <p style="font-family:Windows;font-weight:900;" >11/18/2025: Recording Began For 'The Place Where You Wish You Grew Up'</p>
+            <p style="font-family:Windows;font-weight:900;" >11/5/2025: Production Began For 'The Place Where You Wish You Grew Up'</p>
+            <p style="font-family:Windows;font-weight:900;" >10/1/2025: 'Trash' Released</p>
+            <p style="font-family:Windows;font-weight:900;" >9/29/2025: Production Wrapped For 'Trash'</p>
+            <p style="font-family:Windows;font-weight:900;" >9/20/2025: Recording Wrapped For 'Trash'</p>
+            <p style="font-family:Windows;font-weight:900;" >9/5/2025: 'Caveat' Released</p>
+            <p style="font-family:Windows;font-weight:900;" >8/14/2025: Recording Began For 'Trash'</p>
+            <p style="font-family:Windows;font-weight:900;" >8/14/2025: Production Began For 'Trash'</p>
+            <p style="font-family:Windows;font-weight:900;" >8/4/2025: Production Wrapped For 'Caveat'</p>
+            <p style="font-family:Windows;font-weight:900;" >8/3/2025: Recording Wrapped For 'Caveat'</p>
+            <p style="font-family:Windows;font-weight:900;" >7/10/2025: Recording Began For 'Caveat'</p>
+            <p style="font-family:Windows;font-weight:900;" >6/21/2025: Production Began For 'Caveat'</p>
+         </div>
+      </div>
+      <center>
+         <div style="width:87vw;border:1vw;background-image:url('/backgrounds/background15.png');border-style: outset;border-width: 0.5vw; thick;border-color:#D94CA1;border-radius: 0.4vw;outline-color:#B9287F;outline-style:solid;overflow: auto;">
+            <a id="TOP" href="https://computersoda.neocities.org/home"> <img id="sodabounce" style="width:50vw;height:15vw;" src="/icons/sitelogo.png"> </a>
+            <div class="topnav">
+               <a href="https://computersoda.neocities.org/home">Home</a>
+               <a href="https://computersoda.neocities.org/about">About</a>
+               <a href="https://computersoda.neocities.org/photos">Photos</a>
+               <a href="https://computersoda.neocities.org/art">Art</a>
+               <a class="active" href="https://computersoda.neocities.org/music">Music</a>
+               <a href="https://computersoda.neocities.org/thoughts">Thoughts</a>
+               <a href="https://computersoda.neocities.org/writing">Writings</a>
+               <a href="https://computersoda.neocities.org/changes">Changelog</a>
+               <a href="https://computersoda.neocities.org/graphics">Graphics</a>
+               <a href="https://computersoda.neocities.org/resources">Resources</a>
+               <a href="https://computersoda.neocities.org/sitemap">Site Map</a>
+               <a href="https://computersoda.neocities.org/shop">Gift Store</a>
+               <a href="https://computersoda.neocities.org/projects">Projects</a>
+               <a href="https://computersoda.neocities.org/shrines">Shrines</a>
+            </div>
+            <img style="margin-bottom:-1vw;width:80vw;height:2vw;" src="/graphics/graphicchaindivider2.gif">
+            <div style="width:30vw" class="draggable" id="musicplayer">
+               <div class="title-color">
+                  <div class="actual-title">
+                     <img src="https://loveberry.nekoweb.org/assets/musicplayer/player-icon.png" alt="" height="14px" width="14px"> CD Player
+                  </div>
+                  <div class="title-bar-controls">
+                     <div class="window-button minimize"></div>
+                     <div class="window-button maximize"></div>
+                     <div class="window-button close"></div>
+                  </div>
+               </div>
+               <div class="player-flex">
+                  <div class="player-icon-holder">
+                     <div class="player-icon"></div>
+                  </div>
+                  <div class="player-main">
+                     <select class="track-select"></select>
+                     <div class="controls">
+                        <div class="seeking">
+                           <div class="current-time">00:00</div>
+                           <input type="range" min="1" max="100" value="0" class="seek_slider" onchange="seekTo()">
+                           <div class="total-duration">0:00</div>
+                        </div>
+                        <div class="player-buttons">
+                           <button class="window-button prev-track" onclick="prevTrack()">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-skip-back-icon lucide-skip-back">
+                                 <path d="M17.971 4.285A2 2 0 0 1 21 6v12a2 2 0 0 1-3.029 1.715l-9.997-5.998a2 2 0 0 1-.003-3.432z"/>
+                                 <path d="M3 20V4"/>
+                              </svg>
+                           </button>
+                           <button class="window-button playpause-track" onclick="playpauseTrack()">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-play-icon lucide-play">
+                                 <path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/>
+                              </svg>
+                           </button>
+                           <button class="window-button next-track" onclick="nextTrack()">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-skip-forward-icon lucide-skip-forward">
+                                 <path d="M21 4v16"/>
+                                 <path d="M6.029 4.285A2 2 0 0 0 3 6v12a2 2 0 0 0 3.029 1.715l9.997-5.998a2 2 0 0 0 .003-3.432z"/>
+                              </svg>
+                           </button>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <audio id="music" src=""></audio>
+            </div>
+            <div class="flex-container">
+               <div style="height:50vw;width:20vw" class="box">
+                  <div style="width:20vw;height:10vw;margin-bottom:10vw">
+                     <article>
+                        <div style="width:20vw;border:1vw;background-image:linear-gradient(to bottom, #454545, #616161);border-style: outset;border-width: 0.3vw; thick;border-color: #616161;
+                           border-radius: 1vw;
+                           overflow: auto;">
+                           <h1 id="text" style="font-size:2vw;"> My Music Links </h1>
+                        </div>
+                        <div class="pinky" style="width:20vw;background-color:gray;">
+                           <p style="width:20vw;">
+                              <a style="color:red;font-size:1vw;font-family:Courier New;font-weight:bold;text-shadow: 0.1vw 0.1vw 0.1vw black;" href="https://agonygirlmusic.neocities.org/" target="_blank">My Music Website</a>
+                              <br>
+                              <br>
+                              <a style="color:red;font-size:1vw;font-family:Courier New;font-weight:bold;text-shadow: 0.1vw 0.1vw 0.1vw black;" href="https://open.spotify.com/artist/3OXi9KNr1e8nd4D2PgEFzQ" target="_blank">Listen To My Music On Spotify</a>
+                              <br>
+                              <br>
+                              <a style="color:red;font-size:1vw;font-family:Courier New;font-weight:bold;text-shadow: 0.1vw 0.1vw 0.1vw black;" href="https://music.apple.com/us/artist/agony-girl/1843638212" target="_blank">Listen To My Music On Apple Music</a>
+                              <br>
+                              <br>
+                              <a style="color:red;font-size:1vw;font-family:Courier New;font-weight:bold;text-shadow: 0.1vw 0.1vw 0.1vw black;" href="https://music.youtube.com/channel/UCqPfT_JQ6nICcia9EwXbXng" target="_blank">Listen To My Music On YouTube Music</a>
+                              <br>
+                              <br>
+                              <a style="color:red;font-size:1vw;font-family:Courier New;font-weight:bold;text-shadow: 0.1vw 0.1vw 0.1vw black;" href="https://tidal.com/artist/67759732" target="_blank">Listen To My Music On TIDAL</a>
+                              <br>
+                              <br>
+                              <a style="color:red;font-size:1vw;font-family:Courier New;font-weight:bold;text-shadow: 0.1vw 0.1vw 0.1vw black;" href="https://music.amazon.co.uk/artists/B0FTMZ4TSR" target="_blank">Listen To My Music On Amazon Music</a>
+                              <br>
+                              <br>
+                              <a style="color:red;font-size:1vw;font-family:Courier New;font-weight:bold;text-shadow: 0.1vw 0.1vw 0.1vw black;" href="https://www.youtube.com/@AgonyGirlMusic" target="_blank">Listen To My Music On YouTube</a>
+                              <br>
+                              <br>
+                              <a style="color:red;font-size:1vw;font-family:Courier New;font-weight:bold;text-shadow: 0.1vw 0.1vw 0.1vw black;" href="https://soundcloud.com/agonygirl" target="_blank">Listen To My Music On SoundCloud</a>
+                              <br>
+                              <br>
+                              <a style="color:red;font-size:1vw;font-family:Courier New;font-weight:bold;text-shadow: 0.1vw 0.1vw 0.1vw black;" href="https://agonygirl.bandcamp.com/" target="_blank">Buy My Music On Bandcamp</a>
+                              <br>
+                              <br>
+                           </p>
+                        </div>
+                     </article>
+                  </div>
+               </div>
+               <div style="height:50vw;width:80vw" class="box">
+                  <img class="outline" style="width:9vw;height:8vw;position:absolute;left:86vw;top:19vw;transform: rotate(20deg);" src="/graphics/graphicpumpkin.gif">
+                  <article>
+                     <div style="border:1vw;background-image:linear-gradient(to bottom, #454545, #616161);border-style: outset;border-width: 0.3vw; thick;border-color: #616161;
+                        border-radius: 1vw;
+                        overflow: auto;">
+                        <h1 id="text" style="font-size:2vw;"><img style="width:3vw;height:2.5vw;" src="/graphics/graphicrecordplayer.gif">Music<img style="width:3vw;height:2.5vw;" src="/graphics/graphicrecordplayer.gif"></h1>
+                     </div>
+                     <div style="font-size:1vw;">
+                        <h2 class="interacttext" style="font-size:1.5vw;text-shadow: 0.2vw 0.2vw 0.3vw white;font-family:Stencil">My Albums</h2>
+                        <p id="italic" style="font-size:1.5vw;font-family:courier new;color:yellow;font-weight:bold;">Caveat Released August 5th 2025</p>
+                        <img style="width:30vw;height:30vw;" src="/albumcovers/caveatcover.jpg">
+                        <p id="italic" style="font-size:1.5vw;font-family:courier new;color:red;font-weight:bold;">Trash Released October 1st 2025</p>
+                        <img style="width:30vw;height:30vw;" src="/albumcovers/trashcover.jpg">
+                        <p id="italic" style="font-size:1.5vw;font-family:courier new;color:blue;font-weight:bold;">The Place Where You Wish You Grew Up Released September 9th 2026</p>
+                        <img style="width:30vw;height:30vw;" src="/albumcovers/The_Place_Where_You_Wish_You_Grew_Up_Cover.jpg">
+                        <br>
+                        <div class="pinky" style="background-color:gray">
+                           <p id="italic" style="font-size:1.5vw;font-family:courier new;color:black;font-weight:bold;">My Last Listened To Song (Last.FM Widget)</p>
+                           <iframe src="https://petrapixel.neocities.org/widgets/lastfm?center=0&marquee=0&font-family=courier&font-size=16px&color=#crimson&username=Jane_Iguesss&swapPositions=1&delimiter=-&underline=1" frameborder="0" title="Last.Fm Status"></iframe>
+                           <p id="italic" style="font-size:1.5vw;font-family:courier new;color:black;font-weight:bold;">Favorite Albums</p>
+                           <ul style="list-style-type:none;font-family:Courier New;color:purple;font-weight:bold;text-shadow: 0.2vw 0.2vw 0.3vw cyan">
+                              <li>Mount Eerie - Night Palace </li>
+                              <li>Mount Eerie - A Crow Looked At Me </li>
+                              <li>Godspeed You! Black Emperor - F#A#∞ </li>
+                              <li>Godspeed You! Black Emperor - Lift Yr Skinny Fists Like Antennas To Heaven! </li>
+                              <li>The Brave Little Abacus - Just Got Back From The Discomfort-We're Alright</li>
+                              <li>The Smashing Pumpkins - Siamese Dream </li>
+                              <li>The Smashing Pumpkins - Mellon Collie And The Infinite Sadness </li>
+                              <li>Talking Heads - Remain In Light </li>
+                              <li>Talking Heads - Speaking In Tongues </li>
+                              <li>The Beatles - Abbey Road </li>
+                              <li>The Beatles - Sgt Pepper's Lonely Hearts Club Band </li>
+                              <li>Spineshank - The Height Of Callousness </li>
+                              <li>Xiu Xiu - Knifeplay </li>
+                              <li>Xiu Xiu - A Promise </li>
+                              <li>Xiu Xiu - Dear God I Hate Myself </li>
+                              <li>Xiu Xiu - Angel Guts Red Classroom </li>
+                              <li>Weezer - Pinkerton </li>
+                              <li>Weezer - Everything Will Be Alright In The End </li>
+                              <li>Weezer - Maladroit </li>
+                              <li>My Bloody Valentine - Loveless </li>
+                              <li>My Bloody Valentine - MBV </li>
+                              <li>Strawberry Switchblade - Self Titled </li>
+                              <li>Megadeth - Rust In Peace </li>
+                              <li>Linkin Park - Hybrid Theory </li>
+                              <li>MF DOOM - Madvillainy </li>
+                              <li>Nas - Illmatic </li>
+                              <li>The Smiths - The Queen Is Dead </li>
+                              <li>fIREHOSE - Ragin', Full-On </li>
+                              <li>Swans - Soundtracks For The Blind </li>
+                              <li>Swans - White Life From The Mouth Of Infinity </li>
+                              <li>Swans - To Be Kind </li>
+                              <li>Swans - The Glowing Man </li>
+                              <li>C418 - Minecraft: Volume Alpha </li>
+                              <li>Tool - Lateralus </li>
+                              <li>Kanye West - My Beautiful Dark Twisted Fantasy </li>
+                              <li>Kanye West - Graduation </li>
+                              <li>The Cure - Disintegration </li>
+                              <li>Ween - The Mollusk </li>
+                              <li>Ween - Quebec </li>
+                              <li>Alice In Chains - Self Titled </li>
+                              <li>Alice In Chains - Dirt </li>
+                              <li>Melvins - Houdini </li>
+                              <li>Joy Division - Unknown Pleasures </li>
+                              <li>Kendrick Lamar - To Pimp A Butterfly</li>
+                              <li>Machine Girl - Wlfgrl </li>
+                              <li>The Microphones - The Glow Pt. 2 </li>
+                              <li>The Microphones - Mount Eerie </li>
+                              <li>Car Seat Headrest - Twin Fantasy </li>
+                              <li>Car Seat Headrest - Teens Of Denial </li>
+                              <li>Black Sabbath - Paranoid </li>
+                              <li>Red Hot Chili Peppers - Californication </li>
+                              <li>Dazey And The Scouts - Maggot </li>
+                              <li>Salvia Palth - Melanchole </li>
+                              <li>Bjork - Vespertine </li>
+                              <li>Fleetwood Mac - Rumours </li>
+                              <li>Pink Floyd - Wish You Were Here </li>
+                              <li>Pink Floyd - The Dark Side Of The Moon </li>
+                              <li>Pink Floyd - Animals </li>
+                              <li>Rage Against The Machine - Self Titled </li>
+                              <li>Elliott Smith - Either Or </li>
+                              <li>Dead Kennedy's - Fresh Fruit For Rotting Vegetables </li>
+                              <li>Neutral Milk Hotel - In The Aeroplane Over The Sea </li>
+                              <li>Death Grips - The Money Store </li>
+                              <li>Daniel Johnson - Hi, How Are You </li>
+                              <li>Acid Bath - When The Kite String Pops </li>
+                              <li>Dead Can Dance - The Serpents Egg </li>
+                              <li>Nirvana - In Utero </li>
+                              <li>King Crimson - Red </li>
+                              <li>King Crimson - In The Court Of The Crimson King </li>
+                              <li>Radiohead - In Rainbows </li>
+                              <li>Radiohead - OK Computer </li>
+                              <li>Radiohead - Kid A </li>
+                              <li>Nine Inch Nails - The Downward Spiral </li>
+                              <li>Jeff Buckley - Grace </li>
+                              <li>Aphex Twin - Richard D. James Album </li>
+                              <li>Black Country, New Road - Ants From Up There </li>
+                              <li>Tame Impala - Currents </li>
+                              <li>Danny Brown - Atrocity Exhibition </li>
+                              <li>Sonic Youth - Daydream Nation </li>
+                              <li>Have A Nice Life - Deathconsciousness </li>
+                              <li>Cocteau Twins - Heaven Or Las Vegas </li>
+                              <li>Fishmans - Long Season </li>
+                              <li>A Tribe Called Quest - The Low End Theory </li>
+                              <li>Nick Drake - Pink Moon </li>
+                              <li>Bjork - Post </li>
+                              <li>Earl Sweatshirt - Some Rap Songs </li>
+                              <li>Slint - Spiderland </li>
+                              <li>Swans - Swans Are Dead (Live) </li>
+                              <li>The Velvet Underground - The Velvet Underground And Nico </li>
+                              <li>Wu-Tang Clan - Enter The Wu-Tang (36 Chambers) </li>
+                              <li>Xiu Xiu - Girl With Basket Of Fruit </li>
+                              <li>The Cure - Pornography</li>
+                              <li>Death Grips - Bottomless Pit </li>
+                              <li>David Bowie - The Rise And Fall Of Ziggy Stardust And The Spiders From Mars</li>
+                              <li>Pink Floyd - The Wall</li>
+                           </ul>
+                        </div>
+                        <p id="italic" style="font-size:1.5vw;font-family:courier new;color:black;font-weight:bold;">Favorite Albums Topster</p>
+                        <img style="width:30vw;height:30vw;" src="/photos/topster.png">
+                        <div id="vinyl-gallery">
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/nightpalacecover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Mount Eerie - Night Palace</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/acrowlookedatmecover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Mount Eerie - A Crow Looked At Me</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/gsybeinfinitycover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Godspeed You! Black Emperor - F♯ A♯ ∞</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/discomfortcover.webp"
+                                 />
+                           </div>
+                           <div class="title">The Brave Little Abacus - Just Got Back From The Discomfort-We're Alright</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/siamesedreamcover.jpg"
+                                 />
+                           </div>
+                           <div class="title">The Smashing Pumpkins - Siamese Dream</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/melloncolliecover.jpg"
+                                 />
+                           </div>
+                           <div class="title">The Smashing Pumpkins - Mellon Collie And The Infinity Sadness</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/remaininlightcover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Talking Heads - Remain In Light</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/speakingintonguescover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Talking Heads - Speaking In Tongues</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/abbeyroadcover.jpg"
+                                 />
+                           </div>
+                           <div class="title">The Beatles - Abbey Road</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/sgtpeppercover.jpg"
+                                 />
+                           </div>
+                           <div class="title">The Beatles - Sgt. Lonely Hearts Club Band</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/heightofcallouscover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Spineshank - Height Of Callousness</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/knifeplaycover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Xiu Xiu - Knife Play</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/apromisecover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Xiu Xiu - A Promise </div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/deargodcover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Xiu Xiu - Dear God, I Hate Myself</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/angelgutscover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Xiu Xiu - Angel Guts Red Classroom</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/pinkertoncover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Weezer - Pinkerton</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/ewbaitecover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Weezer - Everything Will Be Alright In The End</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/lovelesscover.jpg"
+                                 />
+                           </div>
+                           <div class="title">My Bloody Valentine - Loveless</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/mbvcover.jpg"
+                                 />
+                           </div>
+                           <div class="title">My Bloody Valentine - M B V</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/strawberryswitchbladecover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Strawberry Switchblade - Self Titled</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/rustinpeacecover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Megadeth - Rust In Peace</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/hybridtheory.jpg"
+                                 />
+                           </div>
+                           <div class="title">Linkin Park - Hybrid Theory</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/madvillainycover.png"
+                                 />
+                           </div>
+                           <div class="title">MF DOOM - Madvillainy</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/illmaticcover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Nas - Illmatic</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/thequeenisdeadcover.png"
+                                 />
+                           </div>
+                           <div class="title">The Smiths - The Queen Is Dead</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/raginfulloncover.jpg"
+                                 />
+                           </div>
+                           <div class="title">fIREHOSE - Ragin', Full-On</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/stftbcover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Swans - Soundtracks For The Blind</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/wlftmoicover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Swans - White Light From The Mouth Of Infinity</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/tobekindcover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Swans - To Be Kind</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/glowingmancover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Swans - The Glowing Man</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/volumealphacover.jpeg"
+                                 />
+                           </div>
+                           <div class="title">C418 - Minecraft: Volume Alpha</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/lateraluscover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Tool - Lateralus</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/mbdtfcover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Kanye West - My Beautiful Dark Twisted Fantasy</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/graduationcover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Kanye West - Graduation</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/disintegration.jpg"
+                                 />
+                           </div>
+                           <div class="title">The Cure - Disintegration</div>
+                        </div>
+                        <div id="vinyl-gallery">
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/molluskcover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Ween - The Mollusk</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/quebeccover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Ween - Quebec</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/aiccover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Alice in Chains - Self Titled</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/dirtcover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Alice in Chains - Dirt</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/houdinicover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Melvins - Houdini</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/unknownpleasurescover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Joy Division - Unknown Pleasures</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/tpabcover.png"
+                                 />
+                           </div>
+                           <div class="title">Kendrick Lamar - To Pimp A Butterfly</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/wlfgrlcover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Machine Girl - WLFGRL</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/glowpt2cover.jpg"
+                                 />
+                           </div>
+                           <div class="title">The Microphones - The Glow Pt. 2</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/mounteeriecover.jpg"
+                                 />
+                           </div>
+                           <div class="title">The Microphones - Mount Eerie</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/twinfantasycover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Car Seat Headrest - Twin Fantasy</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/teensofdenialcover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Car Seat Headrest - Teens Of Denial</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/paranoidcover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Black Sabbath - Paranoid</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/californicationcover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Red Hot Chili Peppers - Californication</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/maggotcover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Dazey And The Scouts - Maggot</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/melancholecover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Salvia Palth - Melanchole</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/vespertinecover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Bjork - Vespertine</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/rumourscover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Fleetwood Mac - Rumours</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/wishyouwereherecover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Pink Floyd - Wish You Were Here</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/darksidecover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Pink Floyd - The Dark Side Of The Moon</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/animalscover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Pink Floyd - Animals</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/ratmcover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Rage Against The Machine - Self Titled</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/eitherorcover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Elliott Smith - Either/Or</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/freshfruitcover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Dead Kennedys - Fresh Fruit For Rotting Vegetables</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/aeroplanecover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Neutral Milk Hotel - In The Aeroplane Over The Sea</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/moneystorecover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Death Grips - The Money Store</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/hihowareyoucover.webp"
+                                 />
+                           </div>
+                           <div class="title">Daniel Johnston - Hi, How Are You</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/kitestringcover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Acid Bath - When The Kite String Pops</div>
+                        </div>
+                        <div id="vinyl-gallery">
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/serpentseggcover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Dead Can Dance - The Serpents Egg</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/inuterocover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Nirvana - In Utero</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/redcover.jpg"
+                                 />
+                           </div>
+                           <div class="title">King Crimson - Red</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/crimsonkingcover.jpg"
+                                 />
+                           </div>
+                           <div class="title">King Crimson - In The Court Of The Crimson King</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/okcomputercover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Radiohead - OK Computer</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/inrainbowscover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Radiohead - In Rainbows</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/kidacover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Radiohead - Kid A</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/downwardspiralcover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Nine Inch Nails - The Downward Spiral</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/gracecover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Jeff Buckley - Grace</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/aphextwincover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Aphex Twin - Richard D. James Album</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/bcnrcover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Black Country, New Road - Ants From Up There</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/currentscover.png"
+                                 />
+                           </div>
+                           <div class="title">Tame Impala - Currents</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/dannybrowncover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Danny Brown - Atrocity Exhibition</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/daydreamnationcover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Sonic Youth - Daydream Nation</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/deathconsciousnesscover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Have A Nice Life - Deathconsciousness</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/heavenorlasvegascover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Cocteau Twins - Heaven Or Las Vegas</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/longseasoncover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Fishmans - Long Season</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/lowendtheorycover.jpg"
+                                 />
+                           </div>
+                           <div class="title">A Tribe Called Quest - The Low End Theory</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/pinkmooncover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Nick Drake - Pink Moon</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/postcover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Bjork - Post</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/somerapsongscover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Earl Sweatshirt - Some Rap Songs</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/spiderlandcover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Slint - Spiderland</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/swansaredeadcover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Swans - Swans Are Dead (Live)</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/velvetundergroundcover.jpg"
+                                 />
+                           </div>
+                           <div class="title">The Velvet Underground - The Velvet Underground And Nico</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/wutangcover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Wu-Tang Clan - Enter The Wu-Tang (36 Chambers)</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/gwbofcover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Xiu Xiu - Girl With Basket Of Fruit</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/thecurecover.jpg"
+                                 />
+                           </div>
+                           <div class="title">The Cure - Pornography</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/bottomlesspitcover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Death Grips - Bottomless Pit</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/ziggystardustcover.jpg"
+                                 />
+                           </div>
+                           <div class="title">David Bowie - The Rise And Fall Of Ziggy Stardust And The Spiders From Mars</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/thewallcover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Pink Floyd - The Wall</div>
+                        </div>
+                        <div class="pinky" style="background-color:gray">
+                           <p id="italic" style="font-size:1.5vw;font-family:courier new;color:black;font-weight:bold;">Albums I Own On Vinyl</p>
+                           <ul style="list-style-type:none;font-family:Courier New;color:purple;font-weight:bold;text-shadow: 0.2vw 0.2vw 0.3vw cyan">
+                              <li>Alice In Chains - Jar Of Flies </li>
+                              <li>Cage The Elephant - Melophobia </li>
+                              <li>Car Seat Headrest - Teens Of Denial </li>
+                              <li>Darkthrone - Transilvanian Hunger </li>
+                              <li>Deftones - Around The Fur </li>
+                              <li>Genesis - Abacab </li>
+                              <li>Gojira - Fortitude </li>
+                              <li>Billy Joel - The Stranger </li>
+                              <li>Daniel Johnston - Hi, How Are You </li>
+                              <li>Linkin Park - Hybrid Theory </li>
+                              <li>Melanie Martinez - K-12 </li>
+                              <li>Melvins - Houdini </li>
+                              <li>The Microphones - The Glow Pt. 2 </li>
+                              <li>Neutral Milk Hotel - In The Aeroplane Over The Sea </li>
+                              <li>Nine Inch Nails - Pretty Hate Machine </li>
+                              <li>Nirvana - Bleach </li>
+                              <li>Nirvana - Nevermind </li>
+                              <li>Radiohead - The Bends </li>
+                              <li>Radiohead - OK Computer </li>
+                              <li>Red Hot Chili Peppers - Blood Sugar Sex Magik </li>
+                              <li>Siouxsie And The Banshees - Once Upon A Time: The Singles </li>
+                              <li>Slipknot - Self Titled </li>
+                              <li>Slipknot - All Hope Is Gone </li>
+                              <li> Swans - Filth </li>
+                              <li> Swans Soundtracks For The Blind </li>
+                              <li>Swans - White Light From The Mouth Of Infinity </li>
+                              <li>Ween - The Pod </li>
+                              <li>Weezer - Blue </li>
+                              <li>Weezer - Black </li>
+                              <li>Xiu Xiu - Dear God I Hate Myself </li>
+                           </ul>
+                        </div>
+                        <div id="vinyl-gallery">
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/jaroffliescover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Alice In Chains - Jar Of Flies</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/melophobiacover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Cage The Elephant - Melophobia</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/teensofdenialcover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Car Seat Headrest - Teens Of Denial</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/hungercover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Darkthrone - Transilvanian Hunger</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/aroundthefurcover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Deftones - Around The Fur</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/abacabcover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Genesis - Abacab</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/fortitudecover.png"
+                                 />
+                           </div>
+                           <div class="title">Gojira - Fortitude</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/thestrangercover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Billy Joel - The Stranger</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/hihowareyoucover.webp"
+                                 />
+                           </div>
+                           <div class="title">Daniel Johnston - Hi, How Are You</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/hybridtheory.jpg"
+                                 />
+                           </div>
+                           <div class="title">Linkin Park - Hybrid Theory</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/k12cover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Melanie Martinez - K-12</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/houdinicover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Melvins - Houdini</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/glowpt2cover.jpg"
+                                 />
+                           </div>
+                           <div class="title">The Microphones - The Glow Pt. 2</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/aeroplanecover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Neutral Milk Hotel - In The Aeroplane Over The Sea</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/prettyhatemachinecover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Nine Inch Nails - Pretty Hate Machine</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/bleachcover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Nirvana - Bleach</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/nevermindcover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Nirvana - Nevermind</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/thebendscover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Radiohead - The Bends</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/okcomputercover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Radiohead - OK Computer</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/bloodsugarcover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Red Hot Chili Peppers - Blood Sugar Sex Magik</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/thesinglescover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Siouxsie And The Banshees - Once Upon A Time: The Singles</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/slipknotcover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Slipknot - Self Titled</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/allhopecover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Slipknot - All Hope Is Gone</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/filthcover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Swans - Filth</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/stftbcover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Swans - Soundtracks For The Blind</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/wlftmoicover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Swans - White Light From The Mouth Of Infinity</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/thepodcover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Ween - The Pod</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/weezerbluecover.png"
+                                 />
+                           </div>
+                           <div class="title">Weezer - Blue</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/weezerblackcover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Weezer - Black</div>
+                           <div class="vinyl">
+                              <img
+                                 src="/albumcovers/deargodcover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Xiu Xiu - Dear God I Hate Myself</div>
+                        </div>
+                        <div class="pinky" style="background-color:gray">
+                           <p id="italic" style="font-size:1.5vw;font-family:courier new;color:black;font-weight:bold;">Albums I Own On CD</p>
+                           <ul style="list-style-type:none;font-family:Courier New;color:purple;font-weight:bold;text-shadow: 0.2vw 0.2vw 0.3vw cyan">
+                              <li>The Cure - Seventeen Seconds </li>
+                              <li>Deftones - Self Titled </li>
+                              <li>Foo Fighters - The Colour And The Shape </li>
+                              <li>Green Day - American Idiot </li>
+                              <li>Korn - Self Titled </li>
+                              <li>Nine Inch Nails - Further Down The Spiral </li>
+                              <li>Nirvana - Self Titled </li>
+                              <li>Pink Floyd - The Wall </li>
+                              <li>Primus - Sailing The Seas Of Cheese </li>
+                              <li>Red Hot Chili Peppers - Californication </li>
+                              <li>Red Hot Chili Peppers - Blood Sugar Sex Magik </li>
+                              <li>Santana - Ultimate Santana </li>
+                              <li>Weezer Maladroit </li>
+                              <li>Weezer - Red </li>
+                           </ul>
+                        </div>
+                        <div id="disc-collection">
+                           <div class="disc">
+                              <img
+                                 src="/albumcovers/17secondscover.jpg"
+                                 />
+                           </div>
+                           <div class="title">The Cure - 17 Seconds</div>
+                           <div class="disc">
+                              <img
+                                 src="/albumcovers/deftonescover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Deftones - Self Titled</div>
+                           <div class="disc">
+                              <img
+                                 src="/albumcovers/colorandtheshapecover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Foo Fighters - The Color And The Shape</div>
+                           <div class="disc">
+                              <img
+                                 src="/albumcovers/americanidiot.png"
+                                 />
+                           </div>
+                           <div class="title">Green Day - American Idiot</div>
+                           <div class="disc">
+                              <img
+                                 src="/albumcovers/korncover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Korn - Self Titled</div>
+                           <div class="disc">
+                              <img
+                                 src="/albumcovers/furtherdowncover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Nine Inch Nails - Further Down The Spiral</div>
+                           <div class="disc">
+                              <img
+                                 src="/albumcovers/nirvanacover.png"
+                                 />
+                           </div>
+                           <div class="title">Nirvana - Self Titled</div>
+                           <div class="disc">
+                              <img
+                                 src="/albumcovers/thewallcover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Pink Floyd - The Wall</div>
+                           <div class="disc">
+                              <img
+                                 src="/albumcovers/primuscover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Primus - Sailing The Seas Of Cheese</div>
+                           <div class="disc">
+                              <img
+                                 src="/albumcovers/californicationcover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Red Hot Chili Peppers - Californication</div>
+                           <div class="disc">
+                              <img
+                                 src="/albumcovers/bloodsugarcover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Red Hot Chili Peppers - Blood Sugar Sex Magik</div>
+                           <div class="disc">
+                              <img
+                                 src="/albumcovers/santanacover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Santana - Ultimate Santana</div>
+                           <div class="disc">
+                              <img
+                                 src="/albumcovers/maladroitcover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Weezer - Maladroit</div>
+                           <div class="disc">
+                              <img
+                                 src="/albumcovers/weezerredcover.jpg"
+                                 />
+                           </div>
+                           <div class="title">Weezer - Red</div>
+                        </div>
+                     </div>
+                     <div class="pinky" style="background-color:gray">
+                        <p id="italic" style="font-size:1.5vw;font-family:courier new;color:black;font-weight:bold;">Songs I Can Play On Bass</p>
+                        <ul style="list-style-type:none;font-family:Courier New;color:purple;font-weight:bold;text-shadow: 0.2vw 0.2vw 0.3vw cyan">
+                           <li>My Bloody Valentine - When You Sleep </li>
+                           <li>Red Hot Chili Peppers - By The Way </li>
+                           <li>Red Hot Chili Peppers - Otherside </li>
+                           <li>Red Hot Chili Pepper - Dont Forget Me </li>
+                           <li>Red Hot Chili Peppers - Goodbye Angels </li>
+                           <li>Red Hot Chili Peppers - Cant Stop </li>
+                           <li>Creedance Clearwater Revival - Have You Ever Seen The Rain </li>
+                           <li>Pink Floyd - Money </li>
+                           <li>Pink Floyd - Comfortably Numb </li>
+                           <li>Primus - My Name Is Mud </li>
+                           <li>Rush - Limelight </li>
+                           <li>Rush - YYZ </li>
+                           <li>Alice In Chains - Nutshell </li>
+                           <li>Alien Ant Farm - Smooth Criminal </li>
+                           <li>fIREHOSE - Chemical Wire </li>
+                           <li>Duran Duran - Invisible </li>
+                           <li>Nirvana - School </li>
+                           <li>Sleep - Dragonaut </li>
+                           <li>Rage Against The Machine - Killing In The Name Of </li>
+                           <li>Talking Heads - Psycho Killer </li>
+                           <li>The Killers - When You Were Young </li>
+                           <li>Cage The Elephant - Broken Boy </li>
+                           <li>Spineshank - New Disease </li>
+                           <li>Swans - Blind </li>
+                           <li>Ween - What Deaner Was Talking About </li>
+                           <li>Ween - Birthday Boy </li>
+                           <li>Ween - Transdermal Celebration </li>
+                           <li>Gorillaz - Feel Good Inc </li>
+                           <li>Nirvana - Come As You Are </li>
+                           <li>The Beatles - Come Together </li>
+                           <li>Tool - Schism </li>
+                           <li>The Offspring - The Kids Arent Alright </li>
+                           <li>The Cranberries - Zombie </li>
+                           <li>The Smashing Pumpkins - 1979 </li>
+                        </ul>
+                     </div>
+                     <div class="pinky" style="background-color:gray">
+                        <p id="italic" style="font-size:1.5vw;font-family:courier new;color:black;font-weight:bold;">Songs I Can Play On Guitar</p>
+                        <ul style="list-style-type:none;font-family:Courier New;color:purple;font-weight:bold;text-shadow: 0.2vw 0.2vw 0.3vw cyan">
+                           <li>My Bloody Valentine - When You Sleep (Electric) </li>
+                           <li>Red Hot Chili Peppers - By The Way (Electric) </li>
+                           <li>Red Hot Chili Peppers - Otherside (Electric) </li>
+                           <li>Swans - Blind (Acoustic) </li>
+                           <li>Ween - Transdermal Celebration (Electric) </li>
+                           <li>The Offspring - The Kids Arent Alright (Electric) </li>
+                           <li>The Offspring - Self Esteem (Electric) </li>
+                           <li>Radiohead - High And Dry (Acoustic)</li>
+                           <li>Neutral Milk Hotel - In The Aeroplane Over The Sea (Acoustic) </li>
+                           <li>The Microphones - The Glow Pt. 2 (Acoustic) </li>
+                           <li>The Microphones - I Want Wind To Blow (Acoustic) </li>
+                           <li>The Microphones - The Moon (Acoustic) </li>
+                           <li>The Microphones - My Warm Blood (Acoustic) </li>
+                        </ul>
+                     </div>
+                  </article>
+               </div>
+            </div>
+            <footer id="text" style="color:red;font-size:1.5vw;font-family:Stencil;text-shadow: 0.2vw 0.2vw 0.3vw yellow;">
+               that's the end
+               <p><a href="#TOP">Jump To Top</a></p>
+            </footer>
+         </div>
+      </center>
+      <script type="text/javascript">
+         // <![CDATA[
+         var colours=new Array('#f00', '#f06', '#f0f', '#f6f', '#f39', '#f9c');
+         var minisize=16; 
+         var maxisize=28; 
+         var hearts=66;
+         var over_or_under="over"; 
+         
+         
+         var x=ox=400;
+         var y=oy=300;
+         var swide=800;
+         var shigh=600;
+         var sleft=sdown=0;
+         var herz=new Array();
+         var herzx=new Array();
+         var herzy=new Array();
+         var herzs=new Array();
+         var kiss=false;
+         
+         if (typeof('addRVLoadEvent')!='function') function addRVLoadEvent(funky) {
+           var oldonload=window.onload;
+           if (typeof(oldonload)!='function') window.onload=funky;
+           else window.onload=function() {
+             if (oldonload) oldonload();
+             funky();
+           }
+         }
+         
+         addRVLoadEvent(mwah);
+         
+         function mwah() { if (document.getElementById) {
+           var i, heart;
+           for (i=0; i<hearts; i++) {
+             heart=createDiv("auto", "auto");
+             heart.style.visibility="hidden";
+         	heart.style.zIndex=(over_or_under=="over")?"1001":"0";
+             heart.style.color=colours[i%colours.length];
+         	heart.style.pointerEvents="none";
+             if (navigator.appName=="Microsoft Internet Explorer") heart.style.filter="alpha(opacity=75)";
+             else heart.style.opacity=0.75;
+             heart.appendChild(document.createTextNode(String.fromCharCode(9733)));
+             document.body.appendChild(heart);
+             herz[i]=heart;
+         	herzy[i]=false;
+           }
+           set_scroll();
+           set_width();
+           herzle();
+         }}
+         
+         function herzle() {
+           var c;
+           if (Math.abs(x-ox)>1 || Math.abs(y-oy)>1) {
+             ox=x;
+             oy=y;
+             for (c=0; c<hearts; c++) if (herzy[c]===false) {
+         	  herz[c].firstChild.nodeValue=String.fromCharCode(9733);
+               herz[c].style.left=(herzx[c]=x-minisize/2)+"px";
+               herz[c].style.top=(herzy[c]=y-minisize)+"px";
+               herz[c].style.fontSize=minisize+"px";
+         	  herz[c].style.fontWeight='normal';
+               herz[c].style.visibility='visible';
+               herzs[c]=minisize;
+               break;
+             }
+           }
+           for (c=0; c<hearts; c++) if (herzy[c]!==false) blow_me_a_kiss(c);
+           setTimeout("herzle()", 40);
+         }
+         
+         document.onmousedown=pucker;
+         document.onmouseup=function(){clearTimeout(kiss);};
+         
+         function pucker() {
+           ox=-1;
+           oy=-1;
+           kiss=setTimeout('pucker()', 100);
+         }
+         
+         function blow_me_a_kiss(i) {
+           herzy[i]-=herzs[i]/minisize+i%2;
+           herzx[i]+=(i%5-2)/5;
+           if (herzy[i]<sdown-herzs[i] || herzx[i]<sleft-herzs[i] || herzx[i]>sleft+swide-herzs[i]) {
+             herz[i].style.visibility="hidden";
+             herzy[i]=false;
+           }
+           else if (herzs[i]>minisize+2 && Math.random()<.5/hearts) break_my_heart(i);
+           else {
+             if (Math.random()<maxisize/herzy[i] && herzs[i]<maxisize) herz[i].style.fontSize=(++herzs[i])+"px";
+             herz[i].style.top=herzy[i]+"px";
+             herz[i].style.left=herzx[i]+"px";
+           }
+         }
+         
+         function break_my_heart(i) {
+           var t;
+           herz[i].firstChild.nodeValue=String.fromCharCode(9733);
+           herz[i].style.fontWeight='bold';
+           herzy[i]=false;
+           for (t=herzs[i]; t<=maxisize; t++) setTimeout('herz['+i+'].style.fontSize="'+t+'px"', 60*(t-herzs[i]));
+           setTimeout('herz['+i+'].style.visibility="hidden";', 60*(t-herzs[i]));
+         }
+         
+         document.onmousemove=mouse;
+         function mouse(e) {
+           if (e) {
+             y=e.pageY;
+             x=e.pageX;
+           }
+           else {
+             set_scroll();
+             y=event.y+sdown;
+             x=event.x+sleft;
+           }
+         }
+         
+         window.onresize=set_width;
+         function set_width() {
+           var sw_min=999999;
+           var sh_min=999999;
+           if (document.documentElement && document.documentElement.clientWidth) {
+             if (document.documentElement.clientWidth>0) sw_min=document.documentElement.clientWidth;
+             if (document.documentElement.clientHeight>0) sh_min=document.documentElement.clientHeight;
+           }
+           if (typeof(self.innerWidth)=='number' && self.innerWidth) {
+             if (self.innerWidth>0 && self.innerWidth<sw_min) sw_min=self.innerWidth;
+             if (self.innerHeight>0 && self.innerHeight<sh_min) sh_min=self.innerHeight;
+           }
+           if (document.body.clientWidth) {
+             if (document.body.clientWidth>0 && document.body.clientWidth<sw_min) sw_min=document.body.clientWidth;
+             if (document.body.clientHeight>0 && document.body.clientHeight<sh_min) sh_min=document.body.clientHeight;
+           }
+           if (sw_min==999999 || sh_min==999999) {
+             sw_min=800;
+             sh_min=600;
+           }
+           swide=sw_min;
+           shigh=sh_min;
+         }
+         
+         window.onscroll=set_scroll;
+         function set_scroll() {
+           if (typeof(self.pageYOffset)=='number') {
+             sdown=self.pageYOffset;
+             sleft=self.pageXOffset;
+           }
+           else if (document.body && (document.body.scrollTop || document.body.scrollLeft)) {
+             sdown=document.body.scrollTop;
+             sleft=document.body.scrollLeft;
+           }
+           else if (document.documentElement && (document.documentElement.scrollTop || document.documentElement.scrollLeft)) {
+             sleft=document.documentElement.scrollLeft;
+             sdown=document.documentElement.scrollTop;
+           }
+           else {
+             sdown=0;
+             sleft=0;
+           }
+         }
+         
+         function createDiv(height, width) {
+           var div=document.createElement("div");
+           div.style.position="absolute";
+           div.style.height=height;
+           div.style.width=width;
+           div.style.overflow="hidden";
+           div.style.backgroundColor="transparent";
+           return (div);
+         }
+         // ]]>
+      </script>
+      <script>
+         var b = document.body;
+         var imgurl = "/graphics/graphicsevenup2.gif";
+         var size = [10, 20];
+         function rand(min, max)
+         {
+         return Math.floor(Math.random() * (max - min + 1) + min)
+         }
+         function getSize()
+         {
+         return rand(size[0], size[1]);
+         }
+         function lerp(a,b,f)
+         {
+         return (b-a)*f+a;
+         }
+         function heart(x,y)
+         {
+         var s = getSize();
+         x -= s/2;
+         y -= s/2;
+         x = Math.floor(x) + rand(-5, 5);
+         y = Math.floor(y) + rand(-5, 5);
+         var fx = x + rand(-40, 40);
+         var fy = y + rand(-40, 40);
+         var i = document.createElement("img");
+         i.src = imgurl;
+         i.style = `pointer-events: none; position: fixed; width: ${s}px; left: ${x}px; top: ${y}px; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; z-index: 1000000;`;
+         b.appendChild(i);
+         var f = 0;
+         var interval;
+         interval = setInterval(function() {
+         var _x = Math.floor(lerp(x, fx, f));
+         var _y = Math.floor(lerp(y, fy, f));
+         i.style = `pointer-events: none; position: fixed; width: ${s}px; left: ${_x}px; top: ${_y}px; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; z-index: 1000000;`;
+         i.style.opacity = 1-f;
+         f += 0.01;
+         if (f > 1)
+         {
+         clearInterval(interval);
+         b.removeChild(i);
+         }
+         }, 10);
+         }
+         function bro(x,y)
+         {
+         for (var i = 0; i < 5; i++)
+         {
+         heart(x,y);
+         }
+         }
+         b.addEventListener("click", function(event){
+         var x = event.clientX;
+         var y = event.clientY;
+         bro(x,y);
+         });
+         
+           
+      </script>
+      <script type="text/javascript">
+         function tb8_makeArray(n){
+         this.length = n;
+         return this.length;
+         }
+         tb8_messages = new tb8_makeArray(3);
+         tb8_messages[0] = "Music Page";
+         tb8_messages[1] = "Music Page";
+         tb8_messages[2] = "Music Page";
+         tb8_rptType = 'infinite';
+         tb8_rptNbr = 5;
+         tb8_speed = 100;
+         tb8_delay = 2000;
+         var tb8_counter=1;
+         var tb8_currMsg=0;
+         var tb8_tekst ="";
+         var tb8_i=0;
+         var tb8_TID = null;
+         function tb8_pisi(){
+         tb8_tekst = tb8_tekst + tb8_messages[tb8_currMsg].substring(tb8_i, tb8_i+1);
+         document.title = tb8_tekst;
+         tb8_sp=tb8_speed;
+         tb8_i++;
+         if (tb8_i==tb8_messages[tb8_currMsg].length){
+         tb8_currMsg++; tb8_i=0; tb8_tekst="";tb8_sp=tb8_delay;
+         }
+         if (tb8_currMsg == tb8_messages.length){
+         if ((tb8_rptType == 'finite') && (tb8_counter==tb8_rptNbr)){
+         clearTimeout(tb8_TID);
+         return;
+         }
+         tb8_counter++;
+         tb8_currMsg = 0;
+         }
+         tb8_TID = setTimeout("tb8_pisi()", tb8_sp);
+         }
+         tb8_pisi()
+      </script>
+      <script>
+         const dragElements = document.querySelectorAll(".draggable"); 
+         
+         function onMouseDrag(event, element) {
+             let leftValue = parseInt(window.getComputedStyle(element).left);
+             let topValue = parseInt(window.getComputedStyle(element).top);
+             element.style.left = `${leftValue + event.movementX}px`;
+             element.style.top = `${topValue + event.movementY}px`;
+         }
+         
+         dragElements.forEach((element) => {
+             element.addEventListener("mousedown", (e) => {
+                 const onMove = (event) => onMouseDrag(event, element); 
+         
+                 document.addEventListener("mousemove", onMove);
+                 document.addEventListener("mouseup", () => {
+                     document.removeEventListener("mousemove", onMove);
+                 }, { once: true });
+             });
+         });
+      </script>
+      <script>
+         let track_list = [
+               {
+                   name:"Between The Bars",
+                   artist:"Elliott Smith",
+                   path:"https://files.catbox.moe/isr3q3.mp3"
+               },
+               {
+                   name:"Needle In The Hay",
+                   artist:"Elliott Smith",
+                   path:"https://files.catbox.moe/82ox5x.mp3"
+               },
+               {
+                   name:"Drunk Drivers / Killer Whales",
+                   artist:"Car Seat Headrest",
+                   path:"https://files.catbox.moe/kabkyx.mp3"
+               },
+               {
+                   name:"Something Soon",
+                   artist:"Car Seat Hedrest",
+                   path:"https://files.catbox.moe/gded9p.mp3"
+               },
+               {
+                   name:"Climbing Up The Walls",
+                   artist:"Radiohead",
+                   path:"https://files.catbox.moe/ze88qk.mp3"
+               },
+                     {
+                   name:"How To Disappear Completely",
+                   artist:"Radiohead",
+                   path:"https://files.catbox.moe/wi7gvb.mp3"
+               },
+                     {
+                   name:"Idioteque",
+                   artist:"Radiohead",
+                   path:"https://files.catbox.moe/bnlj9o.mp3"
+               },
+                     {
+                   name:"Reckoner",
+                   artist:"Radiohead",
+                   path:"https://files.catbox.moe/9d0pf6.mp3"
+               },
+                     {
+                   name:"Holland, 1945",
+                   artist:"Neutral Milk Hotel",
+                   path:"https://files.catbox.moe/iao0xp.mp3"
+               },
+                     {
+                   name:"In The Aeroplane Over The Sea",
+                   artist:"Neutral Milk Hotel",
+                   path:"https://files.catbox.moe/6bx32j.mp3"
+               },
+                           {
+                   name:"I Want Wind To Blow",
+                   artist:"The Microphones",
+                   path:"https://files.catbox.moe/7u312x.mp3"
+               },
+                           {
+                   name:"The Gleam Pt. 2",
+                   artist:"The Microphones",
+                   path:"https://files.catbox.moe/r5fgn1.mp3"
+               },
+                           {
+                   name:"The Glow Pt. 2",
+                   artist:"The Microphones",
+                   path:"https://files.catbox.moe/oqex83.mp3"
+               },
+                           {
+                   name:"I Want To Be Cold",
+                   artist:"The Microphones",
+                   path:"https://files.catbox.moe/o5cga0.mp3"
+               },
+                           {
+                   name:"The Moon",
+                   artist:"The Microphones",
+                   path:"https://files.catbox.moe/p7av8w.mp3"
+               },
+                           {
+                   name:"It's Gonna Be Alright",
+                   artist:"Ween",
+                   path:"https://files.catbox.moe/xaim8p.mp3"
+               },
+                           {
+                   name:"The Argus",
+                   artist:"Ween",
+                   path:"https://files.catbox.moe/r13pui.mp3"
+               },
+                                 {
+                   name:"Transdermal Celebration",
+                   artist:"Ween",
+                   path:"https://files.catbox.moe/x62yld.mp3"
+               },
+                                 {
+                   name:"Sometimes",
+                   artist:"My Bloody Valentine",
+                   path:"https://files.catbox.moe/llogzb.mp3"
+               },
+                                 {
+                   name:"When You Sleep",
+                   artist:"My Bloody Valentine",
+                   path:"https://files.catbox.moe/laovcw.mp3"
+               },
+                                 {
+                   name:"Soon",
+                   artist:"My Bloody Valentine",
+                   path:"https://files.catbox.moe/yuc2cv.mp3"
+               },
+                                 {
+                   name:"Blind",
+                   artist:"Swans",
+                   path:"https://files.catbox.moe/6hsobq.mp3"
+               },
+                                 {
+                   name:"Love Will Save You",
+                   artist:"Swans",
+                   path:"https://files.catbox.moe/5n29s2.mp3"
+               },
+                                 {
+                   name:"The Sound",
+                   artist:"Swans",
+                   path:"https://files.catbox.moe/ybrc6l.mp3"
+               },
+                                       {
+                   name:"The Gleam Pt. 3",
+                   artist:"Mount Eerie",
+                   path:"https://files.catbox.moe/lzgkqi.mp3"
+               },
+                                       {
+                   name:"Stupid In The Dark",
+                   artist:"Xiu Xiu",
+                   path:"https://files.catbox.moe/ikrjct.mp3"
+               },
+                                       {
+                   name:"Apistat Commander",
+                   artist:"Xiu Xiu",
+                   path:"https://files.catbox.moe/0ds0uf.mp3"
+               },
+                                       {
+                   name:"Botanica De Los Angeles",
+                   artist:"Xiu Xiu",
+                   path:"https://files.catbox.moe/ddeaqp.mp3"
+               },
+           ];
+           
+         
+         
+         let now_playing = document.querySelector(".now-playing");
+         let track_select = document.querySelector(".track-select");
+         let playpause_btn = document.querySelector(".playpause-track");
+         let seek_slider = document.querySelector(".seek_slider");
+         let curr_time = document.querySelector(".current-time");
+         let total_duration = document.querySelector(".total-duration");
+         
+         let track_index = 0;
+         let isPlaying = false;
+         let updateTimer;
+         
+         let curr_track = document.getElementById("music");
+         
+         function populateDropdown() {
+           if (!track_select) return;
+           track_select.innerHTML = "";
+           track_list.forEach((track, index) => {
+             const option = document.createElement("option");
+             option.value = index;
+             option.textContent = `${track.name} — ${track.artist}`;
+             track_select.appendChild(option);
+           });
+           track_select.value = track_index;
+         }
+         
+         function loadTrack(track_index) {
+           clearInterval(updateTimer);
+           resetValues();
+         
+           curr_track.src = track_list[track_index].path;
+           curr_track.load();
+         
+           if (now_playing) now_playing.textContent = (track_index + 1) + " / " + track_list.length;
+         
+           updateTimer = setInterval(seekUpdate, 1000);
+           curr_track.addEventListener("ended", nextTrack);
+         
+           if (track_select) track_select.value = track_index;
+         }
+         
+         function resetValues() {
+           curr_time.textContent = "0:00";
+           total_duration.textContent = "0:00";
+           seek_slider.value = 0;
+         }
+         
+         if (track_select) {
+           track_select.addEventListener("change", function() {
+             track_index = parseInt(this.value);
+             loadTrack(track_index);
+             playTrack();
+           });
+         }
+         
+         function playpauseTrack() {
+           if (!isPlaying) playTrack();
+           else pauseTrack();
+         }
+         
+         function playTrack() {
+           curr_track.play();
+           isPlaying = true;
+           playpause_btn.innerHTML = `
+             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+             viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round"
+             class="lucide lucide-pause-icon"><rect x="14" y="3" width="5" height="18" rx="1"/><rect x="5" y="3" width="5" height="18" rx="1"/></svg>`;
+         }
+         
+         function pauseTrack() {
+           curr_track.pause();
+           isPlaying = false;
+           playpause_btn.innerHTML = `
+             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+             viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round"
+             class="lucide lucide-play-icon"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003
+             3.458l-12 7A2 2 0 0 1 5 19z"/></svg>`;
+         }
+         
+         function nextTrack() {
+           if (track_index < track_list.length - 1) track_index += 1;
+           else track_index = 0;
+           loadTrack(track_index);
+           playTrack();
+         }
+         
+         function prevTrack() {
+           if (track_index > 0) track_index -= 1;
+           else track_index = track_list.length - 1;
+           loadTrack(track_index);
+           playTrack();
+         }
+         
+         function seekTo() {
+           seekto = curr_track.duration * (seek_slider.value / 100);
+           curr_track.currentTime = seekto;
+         }
+         
+         function seekUpdate() {
+           let seekPosition = 0;
+           if (!isNaN(curr_track.duration)) {
+             seekPosition = curr_track.currentTime * (100 / curr_track.duration);
+             seek_slider.value = seekPosition;
+         
+             let currentMinutes = Math.floor(curr_track.currentTime / 60);
+             let currentSeconds = Math.floor(curr_track.currentTime - currentMinutes * 60);
+             let durationMinutes = Math.floor(curr_track.duration / 60);
+             let durationSeconds = Math.floor(curr_track.duration - durationMinutes * 60);
+         
+             if (currentSeconds < 10) currentSeconds = "0" + currentSeconds;
+             if (durationSeconds < 10) durationSeconds = "0" + durationSeconds;
+         
+             curr_time.textContent = currentMinutes + ":" + currentSeconds;
+             total_duration.textContent = durationMinutes + ":" + durationSeconds;
+           }
+         }
+         
+         populateDropdown();
+         loadTrack(track_index);
+           
+      </script>
+   </body>
+</html>
