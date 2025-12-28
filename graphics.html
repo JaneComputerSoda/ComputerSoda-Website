@@ -1,0 +1,1285 @@
+<!DOCTYPE html>
+<html>
+<!-- PLEASE DO NOT STEAL MY CODE! Thank You :3 -->
+   <head>
+      <style>
+         .outline {
+         filter: drop-shadow(1px 1px 0 purple) 
+         drop-shadow(-1px 1px 0 purple) 
+         drop-shadow(0 2px 0 purple) 
+         drop-shadow(0 -1px 0 purple) 
+         drop-shadow(0 1px 1.5px purple) 
+         drop-shadow(0 -1px 1.5px purple) 
+         drop-shadow(1px -1px 1.5px purple) 
+         drop-shadow(-1px -1px 1.5px purple);     
+         }
+         .pinky {
+         border-width:8px;
+         border-style:solid;
+         border-image: url("https://i.ibb.co/h1Q3bFn/83-B27704-CEA1-4-B8-F-BF79-90-D624-EDC6-F6.png") 8 fill round;
+         }
+         }
+         @keyframes flicker {
+         0% {
+         opacity: 0.27861;
+         }
+         5% {
+         opacity: 0.34769;
+         }
+         10% {
+         opacity: 0.23604;
+         }
+         15% {
+         opacity: 0.90626;
+         }
+         20% {
+         opacity: 0.18128;
+         }
+         25% {
+         opacity: 0.83891;
+         }
+         30% {
+         opacity: 0.65583;
+         }
+         35% {
+         opacity: 0.67807;
+         }
+         40% {
+         opacity: 0.26559;
+         }
+         45% {
+         opacity: 0.84693;
+         }
+         50% {
+         opacity: 0.96019;
+         }
+         55% {
+         opacity: 0.08594;
+         }
+         60% {
+         opacity: 0.20313;
+         }
+         65% {
+         opacity: 0.71988;
+         }
+         70% {
+         opacity: 0.53455;
+         }
+         75% {
+         opacity: 0.37288;
+         }
+         80% {
+         opacity: 0.71428;
+         }
+         85% {
+         opacity: 0.70419;
+         }
+         90% {
+         opacity: 0.7003;
+         }
+         95% {
+         opacity: 0.36108;
+         }
+         100% {
+         opacity: 0.24387;
+         }
+         }
+         @keyframes textShadow {
+         0% {
+         text-shadow: 0.4389924193300864px 0 1px rgba(0,30,255,0.5), -0.4389924193300864px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+         }
+         5% {
+         text-shadow: 2.7928974010788217px 0 1px rgba(0,30,255,0.5), -2.7928974010788217px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+         }
+         10% {
+         text-shadow: 0.02956275843481219px 0 1px rgba(0,30,255,0.5), -0.02956275843481219px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+         }
+         15% {
+         text-shadow: 0.40218538552878136px 0 1px rgba(0,30,255,0.5), -0.40218538552878136px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+         }
+         20% {
+         text-shadow: 3.4794037899852017px 0 1px rgba(0,30,255,0.5), -3.4794037899852017px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+         }
+         25% {
+         text-shadow: 1.6125630401149584px 0 1px rgba(0,30,255,0.5), -1.6125630401149584px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+         }
+         30% {
+         text-shadow: 0.7015590085143956px 0 1px rgba(0,30,255,0.5), -0.7015590085143956px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+         }
+         35% {
+         text-shadow: 3.896914047650351px 0 1px rgba(0,30,255,0.5), -3.896914047650351px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+         }
+         40% {
+         text-shadow: 3.870905614848819px 0 1px rgba(0,30,255,0.5), -3.870905614848819px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+         }
+         45% {
+         text-shadow: 2.231056963361899px 0 1px rgba(0,30,255,0.5), -2.231056963361899px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+         }
+         50% {
+         text-shadow: 0.08084290417898504px 0 1px rgba(0,30,255,0.5), -0.08084290417898504px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+         }
+         55% {
+         text-shadow: 2.3758461067427543px 0 1px rgba(0,30,255,0.5), -2.3758461067427543px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+         }
+         60% {
+         text-shadow: 2.202193051050636px 0 1px rgba(0,30,255,0.5), -2.202193051050636px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+         }
+         65% {
+         text-shadow: 2.8638780614874975px 0 1px rgba(0,30,255,0.5), -2.8638780614874975px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+         }
+         70% {
+         text-shadow: 0.48874025155497314px 0 1px rgba(0,30,255,0.5), -0.48874025155497314px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+         }
+         75% {
+         text-shadow: 1.8948491305757957px 0 1px rgba(0,30,255,0.5), -1.8948491305757957px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+         }
+         80% {
+         text-shadow: 0.0833037308038857px 0 1px rgba(0,30,255,0.5), -0.0833037308038857px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+         }
+         85% {
+         text-shadow: 0.09769827255241735px 0 1px rgba(0,30,255,0.5), -0.09769827255241735px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+         }
+         90% {
+         text-shadow: 3.443339761481782px 0 1px rgba(0,30,255,0.5), -3.443339761481782px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+         }
+         95% {
+         text-shadow: 2.1841838852799786px 0 1px rgba(0,30,255,0.5), -2.1841838852799786px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+         }
+         100% {
+         text-shadow: 2.6208764473832513px 0 1px rgba(0,30,255,0.5), -2.6208764473832513px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+         }
+         }
+         .crt::after {
+         content: " ";
+         display: block;
+         position: fixed;
+         top: 0;
+         left: 0;
+         bottom: 0;
+         right: 0;
+         background: rgba(18, 16, 16, 0.1);
+         opacity: 0;
+         z-index: 2;
+         pointer-events: none;
+         animation: flicker 0.15s infinite;
+         }
+         .crt::before {
+         content: " ";
+         display: block;
+         position: fixed;
+         top: 0;
+         left: 0;
+         bottom: 0;
+         right: 0;
+         background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+         z-index: 2;
+         background-size: 100% 2px, 3px 100%;
+         pointer-events: none;
+         }
+         .crt {
+         animation: textShadow 1.6s infinite;
+         }
+         @font-face {
+         font-family: myfont3; 
+         src: url(https://computersoda.neocities.org/misc_files/myfont3.ttf); 
+         }
+         a:hover {
+         color: purple;
+         }
+         .interacttext{
+         transition: 0.5s;
+         }
+         .interacttext:hover{
+         letter-spacing: 7px;
+         }
+         #sodabounce {
+         -webkit-animation: pop 1s ease-in-out infinite alternate;
+         animation: pop 1s ease-in-out infinite alternate;
+         -moz-animation: pop 1s ease-in-out infinite alternate;
+         }
+         @keyframes pop {
+         from {
+         transform:scale(0.95)
+         }
+         50% {
+         transform:scale(1)
+         }
+         to {
+         transform:scale(0.95)
+         }
+         }
+         @-webkit-keyframes pop {
+         from {
+         -webkit-transform:scale(0.95)
+         }
+         50% {
+         -webkit-transform:scale(1)
+         }
+         to {
+         -webkit-transform:scale(0.95)
+         }
+         }
+         @keyframes spin {
+         100% {
+         transform:rotate(360deg);
+         }
+         }
+         .recordPlayer {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         padding-bottom: 0vw;
+         }
+         .vinyl {
+         height: 10vw;
+         margin-left: 3vw;
+         padding: 0vw;
+         animation: spin 1.88s linear infinite;
+         position: absolute;
+         }
+         .vinylCover {
+         height: 10vw;
+         position: relative;
+         z-index: 1;
+         margin-right: 3vw;
+         }
+         #text:hover{ 
+         transition: .2s ease;
+         transform: translate(0, -12px);
+         }  
+         body {
+         cursor: url("/icons/cursor.ico"), default;
+         }
+         body {
+         background-image:url('/backgrounds/stars.png');
+         }
+         head {
+         background-image:url('/backgrounds/stars.png');
+         }
+         .topnav {
+         background-color: gray;
+         background-image: linear-gradient(to bottom, DarkGray, LightGray);
+         overflow: hidden;
+         border-style: outset;
+         border-width: 0.3vw; thick;
+         border-color: LightGray;
+         border-radius: 1vw;
+         text-shadow: 0.1vw 0.1vw red;
+         font-weight: bold;
+         font-family: "Courier New"
+         }
+         .topnav a {
+         float: left;
+         color: black;
+         text-align: center;
+         padding: 0.5vw 1vw;
+         text-decoration: none;
+         font-size: 1vw;
+         }
+         .topnav a:hover {
+         background-image: linear-gradient(to bottom, black, gray);
+         color: black;
+         }
+         .topnav a.active {
+         background-color: DimGray;
+         background-image: linear-gradient(to bottom, DimGray, DarkGray);
+         color: black;
+         }
+         h1 {
+         text-shadow: 0.2vw 0.2vw 0.3vw lime;
+         font-family: "Stencil"
+         }
+         p {
+         font-family: "Stencil"
+         }
+         .box {
+         width: 40vw;
+         height: 50vw
+         padding: 0vw;
+         border: 2vw ;
+         margin-top: 1.5vw;
+         margin-left: 0.5vw;
+         margin-right: 1vw;
+         margin-bottom: 1vw;
+         background-image: linear-gradient(to bottom, gray, lightgray);
+         border-style: outset;
+         border-width: 0.3vw; thick;
+         border-color: LightGray;
+         border-radius: 1vw;
+         overflow: auto;
+         }
+         .flex-container {
+         display: flex; 
+         flex-direction: row; 
+         justify-content: space-around; 
+         align-items: flex-start; 
+         }
+         ::-webkit-scrollbar {
+         width: 1vw;
+         height: 3vw;
+         }
+         ::-webkit-scrollbar-track {
+         background-color: lightgray;
+         image-rendering: pixelated;
+         -webkit-filter: grayscale(100%);
+         -moz-filter: grayscale(100%);
+         -ms-filter: grayscale(100%);
+         -o-filter: grayscale(100%);
+         filter: grayscale(100%);
+         }
+         ::-webkit-scrollbar-track:active {
+         background-color: lightgray;
+         -webkit-filter: grayscale(100%);
+         -moz-filter: grayscale(100%);
+         -ms-filter: grayscale(100%);
+         -o-filter: grayscale(100%);
+         filter: grayscale(100%);
+         }
+         ::-webkit-scrollbar-thumb {
+         border-top: 0.1vw solid #cccccc;
+         border-left: 0.1vw solid #cccccc;
+         border-right: 0.1vw solid black;
+         border-bottom: 0.1vw solid black;
+         box-shadow: inset 0.1vw 0.1vw 0 0 white, inset -0.1vw -0.1vw 0 0 #868a8e;
+         width: 1vw;
+         height: 1vw;
+         background-color: #cccccc;
+         z-index: 1;
+         }
+         ::-webkit-scrollbar-corner {
+         background-color: #cccccc;
+         }
+         ::-webkit-resizer {
+         width: 1vw;
+         height: 1vw;
+         background-color: #cccccc;
+         background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAN0lEQVR4Ae3MgQUAMBRDwU5fFF05lb/CARTBw2Ulof0DxPtcwp3hNuEYnjbcEW4TjuFpwx3h9gMWGgZ2Y/PT2gAAAABJRU5ErkJggg==");
+         background-position: bottom right;
+         background-repeat: no-repeat;
+         image-rendering: pixelated;
+         }
+         ::-webkit-scrollbar-button,
+         .scroll::-webkit-scrollbar-button {
+         border-top: 0.1vw solid #cccccc;
+         border-left: 0.1vw solid #cccccc;
+         border-right: 0.1vw solid black;
+         border-bottom: 0.1vw solid black;
+         box-shadow: inset 0.1vw 0.1vw 0 0 white, inset -0.1vw -0.1vw 0 0 #868a8e;
+         display: block;
+         width: 1px;
+         height: 16px;
+         background-color: #cccccc;
+         image-rendering: pixelated;
+         background-repeat: no-repeat;
+         background-position: center center;
+         }
+         ::-webkit-scrollbar-button:active,
+         .scroll::-webkit-scrollbar-button:active {
+         background-position: 2vw 2vw;
+         }
+         ::-webkit-scrollbar-button:horizontal:decrement,
+         .scroll::-webkit-scrollbar-button:horizontal:decrement {
+         background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAQAAAD8fJRsAAAAHklEQVQY02NgoBT8xyX8H5fwf1zCpOjAYwceV1EEAAO2D/HsQ4vsAAAAAElFTkSuQmCC");
+         }
+         ::-webkit-scrollbar-button:horizontal:increment,
+         .scroll::-webkit-scrollbar-button:horizontal:increment {
+         background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAQAAAD8fJRsAAAAHUlEQVQY02NgIB/8xy3xH7fEf9wS/0nUQZqrKAYAK44P8ZRmzLQAAAAASUVORK5CYII=");
+         }
+         ::-webkit-scrollbar-button:vertical:decrement,
+         .scroll::-webkit-scrollbar-button:vertical:decrement {
+         background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAAGklEQVR4AWMYxuA/SYphmETFhDX9x4mHGQAAcL4P8dQiMq8AAAAASUVORK5CYII=");
+         }
+         ::-webkit-scrollbar-button:vertical:increment,
+         .scroll::-webkit-scrollbar-button:vertical:increment {
+         background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAQAAAD8fJRsAAAAF0lEQVQY02NgoBf4jwJxSOHQhcNAOgMAWWAP8Rv2U3UAAAAASUVORK5CYII=");
+         }
+         ::-webkit-scrollbar-button:horizontal:increment:start,
+         .scroll::-webkit-scrollbar-button:horizontal:increment:start {
+         display: none;
+         }
+         ::-webkit-scrollbar-button:horizontal:decrement:end,
+         .scroll::-webkit-scrollbar-button:horizontal:decrement:end {
+         display: none;
+         }
+         ::-webkit-scrollbar-button:vertical:increment:start,
+         .scroll::-webkit-scrollbar-button:vertical:increment:start {
+         display: none;
+         }
+         ::-webkit-scrollbar-button:vertical:decrement:end,
+         .scroll::-webkit-scrollbar-button:vertical:decrement:end {
+         display: none;
+         }
+         ::-webkit-scrollbar-button:active,
+         .scroll::-webkit-scrollbar-button:active {
+         border-top: 0.1vw solid #868a8e;
+         border-left: 0.1vw solid #868a8e;
+         border-bottom: 0.1vw solid #868a8e;
+         border-right: 0.1vw solid #868a8e;
+         box-shadow: none;
+         }
+         footer {
+         text-align: center;
+         padding: 1vw;
+         border: 2vw ;
+         margin-top: 0.5vw;
+         margin-left: 0.5vw;
+         margin-right: 1vw;
+         margin-bottom: 1vw;
+         background-image: linear-gradient(to bottom, gray, lightgray);
+         border-style: outset;
+         border-width: 0.3vw; thick;
+         border-color: LightGray;
+         border-radius: 1vw;
+         overflow: auto;
+         }
+         .container {
+         display: flex;
+         }
+         .row {
+         display: flex;
+         }
+         .column {
+         flex: 33.33%;
+         padding: 5px;
+         }
+      </style>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Graphics</title>
+      <link rel="icon"  href="/icons/favicon.ico">
+   </head>
+   <body class="crt">
+      <div style="position:fixed;" class="recordPlayer">
+         <img class="vinyl" src="https://beta.vinylify.com/wp-content/uploads/2018/05/vinyl-black.png"/>
+         <img class="vinylCover" src="/albumcovers/trashcover.jpg"/>
+      </div>
+      <center>
+         <div style="width:87vw;border:1vw;background-image:url('/backgrounds/background15.png');border-style: outset;border-width: 0.5vw; thick;border-color:#D94CA1;border-radius: 0.4vw;outline-color:#B9287F;outline-style:solid;overflow: auto;">
+            <a id="TOP" href="https://computersoda.neocities.org/home"> <img id="sodabounce" style="width:50vw;height:15vw;" src="/icons/sitelogo.png"> </a>
+            <div class="topnav">
+               <a href="https://computersoda.neocities.org/home">Home</a>
+               <a href="https://computersoda.neocities.org/about">About</a>
+               <a href="https://computersoda.neocities.org/about">Photos</a>
+               <a href="https://computersoda.neocities.org/art">Art</a>
+               <a href="https://computersoda.neocities.org/music">Music</a>
+               <a href="https://computersoda.neocities.org/thoughts">Thoughts</a>
+               <a href="https://computersoda.neocities.org/writing">Writings</a>
+               <a href="https://computersoda.neocities.org/changes">Changelog</a>
+               <a class="active" href="https://computersoda.neocities.org/graphics">Graphics</a>
+               <a href="https://computersoda.neocities.org/resources">Resources</a>
+               <a href="https://computersoda.neocities.org/sitemap">Site Map</a>
+               <a href="https://computersoda.neocities.org/shop">Gift Store</a>
+               <a href="https://computersoda.neocities.org/projects">Projects</a>
+               <a href="https://computersoda.neocities.org/shrines">Shrines</a>
+            </div>
+            <img style="margin-bottom:-1vw;width:80vw;height:2vw;" src="/graphics/graphicchaindivider2.gif">
+            <iframe width="0" height="0" src="https://www.youtube.com/embed/1QVxh_qVFKQ//?&;amp;;autoplay=1&;loop=1&;controls=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" loading="lazy"> </iframe>
+            <div class="flex-container">
+               <div style="height:50vw;width:100vw" class="box">
+                  <img class="outline" style="width:9vw;height:9vw;position:absolute;left:86vw;top:18vw;transform: rotate(60deg);" src="/graphics/graphicpentagram.gif">
+                  <article>
+                     <div style="border:1vw;background-image:linear-gradient(to bottom, #454545, #616161);border-style: outset;border-width: 0.3vw; thick;border-color: #616161;
+                        border-radius: 1vw;
+                        overflow: auto;">
+                        <h1 id="text" style="font-size:2vw;"><img style="width:6vw;height:7vw;" src="/graphics/graphicghost.gif">Graphics Library<img style="width:6vw;height:7vw;" src="/graphics/graphicghost.gif"></h1>
+                     </div>
+                     <br>
+                     <div class="pinky" style="background-color:#DC5F9E;">
+                        <h2 class="interacttext" style="font-size:1.5vw;color:purple;font-family:myfont3;">Backgrounds</h2>
+                        <img style="width:10vw;height:10vw;" src="/backgrounds/background1.gif">
+                        <img style="width:10vw;height:10vw;" src="/backgrounds/background10.jpg">
+                        <img style="width:10vw;height:10vw;" src="/backgrounds/background11.gif">
+                        <img style="width:10vw;height:10vw;" src="/backgrounds/background12.jpg">
+                        <img style="width:10vw;height:10vw;" src="/backgrounds/background13.gif">
+                        <img style="width:10vw;height:10vw;" src="/backgrounds/background14.gif">
+                        <img style="width:10vw;height:10vw;" src="/backgrounds/background15.png">
+                        <img style="width:10vw;height:10vw;" src="/backgrounds/background16.gif">
+                        <img style="width:10vw;height:10vw;" src="/backgrounds/background2.gif">
+                        <img style="width:10vw;height:10vw;" src="/backgrounds/background3.jpeg">
+                        <img style="width:10vw;height:10vw;" src="/backgrounds/background4.jpg">
+                        <img style="width:10vw;height:10vw;" src="/backgrounds/background5.gif">
+                        <img style="width:10vw;height:10vw;" src="/backgrounds/background6.gif">
+                        <img style="width:10vw;height:10vw;" src="/backgrounds/background7.gif">
+                        <img style="width:10vw;height:10vw;" src="/backgrounds/background8.gif">
+                        <img style="width:10vw;height:10vw;" src="/backgrounds/background9.jpg">
+                        <img style="width:10vw;height:10vw;" src="/backgrounds/stars.png">
+                     </div>
+                     <div class="pinky" style="background-color:#DC86B1;">
+                        <h2 class="interacttext" style="font-size:1.5vw;color:purple;font-family:myfont3;">Badges</h2>
+                        <img src="/badges/badgeadhd.gif"> 
+                        <img src="/badges/badgeartist.gif"> 
+                        <img src="/badges/badgecat.gif"> 
+                        <img src="/badges/badgedumbass.gif"> 
+                        <img src="/badges/badgefreak.gif"> 
+                        <img src="/badges/badgeindependent.gif"> 
+                        <img src="/badges/badgekitty.gif"> 
+                        <img src="/badges/badgelonely.gif"> 
+                        <img src="/badges/badgemeow.gif">
+                        <img src="/badges/badgenerd.gif"> 
+                        <img src="/badges/badgepessimist.gif"> <img src="/badges/badgepunky.gif"> 
+                        <img src="/badges/badgepur.jpg"> 
+                        <img src="/badges/badgesillygoose.gif">
+                        <img style="width:10vw;height:2vw;" src="/badges/badgefuturama.gif">
+                        <img style="width:10vw;height:2vw;" src="/badges/badgeikea.gif">
+                        <img style="width:10vw;height:2vw;" src="/badges/badgeilovemusic.png">
+                        <img style="width:10vw;height:2vw;" src="/badges/badgelinkinpark.gif">
+                        <img style="width:10vw;height:2vw;" src="/badges/badgemonthfebruary.gif">
+                        <img style="width:10vw;height:2vw;" src="/badges/badgenge.png">
+                        <img style="width:10vw;height:2vw;" src="/badges/badgenirvana.gif">
+                        <img style="width:10vw;height:2vw;" src="/badges/badgepride.gif">
+                        <img style="width:10vw;height:2vw;" src="/badges/badgeradiohead.gif">
+                        <img style="width:10vw;height:2vw;" src="/badges/badgeredbull.gif">
+                     </div>
+                     <div class="pinky" style="background-color:#F9A2CD;">
+                        <h2 class="interacttext" style="font-size:1.5vw;color:purple;font-family:myfont3;">Blinkies</h2>
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkieaddict.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkieacab.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkieaiart.webp">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiealienlovechild.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkieartist.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkieacdc.webp">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkieacdc2.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkieatmylimit.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkieautistic.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiebelieve.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiebiteme.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiecaffeine.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiecringeandproud.webp">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiedepression.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkieaic3.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkieadultswim.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiedroppedonhead.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiefactgot.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiefthepolice.webp">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkieacidbath.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiegaytrans.webp">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiehrtsaveslives.webp">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkieaic.webp">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkieaic2.webp">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiealienxeno.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkieamericanpsycho.webp">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkieaphextwin.webp">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiearcticmonkeys.webp">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiearewealone.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkieathf.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkieayeshaerotica.webp">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiebacktothefuture.webp">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiebeetlejuice.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiebonjovi.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiebowie.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiebreakingbad.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiebreakingbad.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkieburnitall.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiecarseatheadrest.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiecarseatheadrest2.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiedeftones.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiedepechemode.webp">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiedisturbed.webp">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiedreamthisman.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkieeitheror.webp">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkieelliottsmith.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkieeltonjohn.webp">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkieeminem.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkieevildead.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiefleetwoodmac.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiefnaf.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiefoofighters.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiefridaythe13th.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiefridaythe13th2.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkieghostbusters.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiegingersnaps.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiegingersnaps2.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiegiygas.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiehellraiser.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiehole.webp">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkieihavenomouth.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkieilovedrpepper.webp">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiejackoffjill.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiejoydivision.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiekorn2.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiekorn3.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkielinkinpark.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiemachinegirl.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiemccake.webp">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiemegadeth.webp">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiemelloncollie.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiemelvins.webp">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiemetallica.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiemetallica2.webp">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiemetallica3.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkieminecraft.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiemisfits.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiemonster.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiemonzter.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkienin.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkienin.png">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkienin3.webp">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkienintendo64.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkienirvana.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiepearl.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiepearljam1.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiepearljam2.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiepepsi.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiepiano.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiepinhead.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiepinkfloyd1.webp">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiepinterest.webp">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiepixies.webp">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiepokemon.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiepolybius.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkieprettyhatemachine.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkieprimus.webp">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkieradiohead.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkieradiohead1.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkieradiohead10.webp">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkieradiohead2.webp">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkieradiohead3.webp">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkieradiohead4.webp">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkieradiohead5.webp">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkieradiohead6.webp">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkieradiohead7.webp">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkieradiohead8.webp">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkieradiohead9.webp">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkierammstein.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkieratm.webp">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkierhcp.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkierobzombie1.webp">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkierobzombie2.webp">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiesabbath.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkieskittle.webp">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkieskyrim.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkieslipknot1.webp">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkieslipknot2.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkieslipknot3.webp">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiesmashingpumpkins.webp">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiesoad1.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiesoad2.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiesoundgarden.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiespiderman.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiespongebob.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkieswans1.webp">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkieswans2.webp">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiesweeneytodd.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkietalkingheads.webp">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkietalkingheads2.webp">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkietcm.webp">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiethebeatles.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiethecrow.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiethecure.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiethecure2.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiethecure3.webp">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiethedoors.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiethedownwardspiral.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiethesmiths1.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiethesmiths2.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiethesmiths3.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiethesmiths4.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkietool.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkieween1.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkieween2.webp">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkieween3.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkieween4.webp">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkieweezer.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkieweezer2.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkieweezer3.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkieweezer4.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkieweezer6.webp">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiewlfgrl.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiekorn.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkieaiart.webp">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiealexg.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiehrt.webp">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkieilikepans.webp">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkieilovecats.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkieilovedrpepper.webp">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkieaerosmith.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkieilovehalloween.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkieilovehorrorfilms.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkieilovehorrormovies.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkieilovemetal.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkieilovereznor.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkieilovesaw.webp">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkieinternetaddict.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiejeansntshirt.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkieloserandproud.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkielosingmymind.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkielovemyonlinefriends.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiemeow.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiemusicislife.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkienya.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkieonlinebitch.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiepanpride.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiepepsigrl.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiepinterest.webp">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkierootbeerdrinker.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkieselfexpression.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiesleepcoffin.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiethriftstores.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkietrans1.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkietrans2.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkietranswomen.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkieundead.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiewebsitegirl.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiebauhaus.webp">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiebcnr.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiebikinikill.webp">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiebjork.webp">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiecensorship.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiecocteautwins.webp">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkieeyehategod.webp">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkielanadelrey.webp">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkieministry.webp">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkieneocities.webp">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiepanchiko.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiesiouxsie.webp">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkieskinnypuppy.webp">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiestrawberryswitchblade.webp">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiestud.webp">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkietatu.webp">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkietypeonegative.webp">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkieasuka.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkieasuka2.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiecharlie.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkieevangelion.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkieglep.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiejunjiito.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiepim.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkierei.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkieshinji.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiesmilingfriends.gif">
+                     </div>
+                     <div class="pinky" style="background-color:#E6C2D8;">
+                        <h2 class="interacttext" style="font-size:1.5vw;color:purple;font-family:myfont3;">Buttons</h2>
+                        <img style="width:12vw;height:1.5vw;" src="/buttons/buttonautism.webp">
+                        <img style="width:12vw;height:1.5vw;" src="/buttons/buttonfreak.gif">
+                        <img style="width:12vw;height:1.5vw;" src="/buttons/buttongayrights.gif">
+                        <img style="width:6vw;height:2vw;" src="/buttons/buttoncomputersoda.png">
+                        <img style="width:6vw;height:2vw;" src="/buttons/buttongothtml.png">
+                        <img style="width:6vw;height:2vw;" src="/buttons/buttoninternetprivacy.gif">
+                        <img style="width:6vw;height:2vw;" src="/buttons/buttonneocitiesweb.gif">
+                        <img style="width:6vw;height:2vw;" src="/buttons/buttonnofascism.gif">
+                        <img style="width:6vw;height:2vw;" src="/buttons/buttonnophone.gif">
+                        <img style="width:6vw;height:2vw;" src="/buttons/buttonamericanidiot.gif">
+                        <img style="width:6vw;height:2vw;" src="/buttons/buttonathf.gif">
+                        <img style="width:6vw;height:2vw;" src="/buttons/buttonblur.gif">
+                        <img style="width:6vw;height:2vw;" src="/buttons/buttondoom.gif">
+                        <img style="width:6vw;height:2vw;" src="/buttons/buttonfallout.gif">
+                        <img style="width:6vw;height:2vw;" src="/buttons/buttongorillaz.gif">
+                        <img style="width:6vw;height:2vw;" src="/buttons/buttongorillaz2.gif">
+                        <img style="width:6vw;height:2vw;" src="/buttons/buttonjoj.webp">
+                        <img style="width:6vw;height:2vw;" src="/buttons/buttonn64.jpg">
+                        <img style="width:6vw;height:2vw;" src="/buttons/buttonpeepy.gif">
+                        <img style="width:6vw;height:2vw;" src="/buttons/buttonquake1.gif">
+                        <img style="width:6vw;height:2vw;" src="/buttons/buttonquake2.gif">
+                        <img style="width:6vw;height:2vw;" src="/buttons/buttonratm.png">
+                        <img style="width:6vw;height:2vw;" src="/buttons/buttonsaul.gif">
+                        <img style="width:6vw;height:2vw;" src="/buttons/buttonscream.gif">
+                        <img style="width:6vw;height:2vw;" src="/buttons/buttonsplatterhouse.png">
+                        <img style="width:6vw;height:2vw;" src="/buttons/buttontransmygender.gif">
+                        <img style="width:6vw;height:2vw;" src="/buttons/buttontransrights.gif">
+                        <img style="width:6vw;height:2vw;" src="/buttons/buttonviewcomputer.gif">
+                        <img style="width:6vw;height:2vw;" src="/buttons/buttoneatrich.jpg">
+                        <img style="width:6vw;height:2vw;" src="/buttons/buttonfirefox.gif">
+                        <img style="width:6vw;height:2vw;" src="/buttons/buttonhtmlnow.gif">
+                        <img style="width:6vw;height:2vw;" src="/buttons/buttonestrogen.gif">
+                        <img style="width:6vw;height:2vw;" src="/buttons/buttonneocities.gif">
+                     </div>
+                     <div class="pinky" style="background-color:#FE9CD7;">
+                        <h2 class="interacttext" style="font-size:1.5vw;color:purple;font-family:myfont3;">Stamps</h2>
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampaibad.png">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampbrainrot.webp">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampcatirl.gif">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampcss.png">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampdeathclaw.png">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampdisembowel.gif">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampdocomputerstuff.jpg">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampfukoff.png">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampgirly.png">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampgoth.png">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampguy.png">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampidreamhtml.gif">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampiheartmysite.gif">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampilovecrows.gif">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stamphorrorfan.png">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stamphorrormovies.png">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampilovemonster.jpg">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampilovesoda.gif">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampleadpipe.jpg">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampmathclass.png">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampmusiclife.webp">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stamppanagain.png">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stamppcgaming.gif">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampstupidbitch.webp">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stamptrans.png">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stamptransrights.png">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampyap.gif">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampant.png">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampaphextwin.png">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampaphextwin2.png">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampatari.gif">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampavgn.jpg">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampbackrooms.gif">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampbeetlejuice.gif">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampbillnye.png">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampborgorshark.gif">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampcarseatheadrest.jpg">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampcarseatheadrest2.png">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampcarseatheadrest3.png">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampcatcomputer.webp">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampcookieclicker.png">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampcrystalpepsi.png">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampdeadmeat.png">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampdeath.gif">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampdeftones.jpg">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampdepechemode.png">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampdhmis.gif">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampdisembowel.gif">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampdocomputerstuff.jpg">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampdonniedarko.gif">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampdoomslayer.gif">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampdoomslayer2.gif">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampdoomslayer3.gif">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampdrpepper.gif">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampdrwho.png">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampeatingchips.gif">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampeatpant.png">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampeye.gif">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampfallout.png">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampfallout2.png">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampfalloutvaultboy.png">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampfleetwoodmac.png">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampfnaf.gif">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampfoofighters.png">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampgorillazplasticbeach.png">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampgravityfalls.webp">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampgreenday.png">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampgreenday2.gif">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stamphole.png">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampicee.gif">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampinrainbows.png">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampitsashame.png">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampjessie.gif">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampkorn.png">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampkorn2.png">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampkorn3.jpg">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampleadpipe.jpg">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampledzeppelin.gif">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stamplimpbizkit.gif">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stamplinkinpark.jpg">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stamplocal58.png">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampmathclass.png">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampmayhem.png">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampmiku.gif">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampmiku2.png">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampmisfits.png">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampmusicspin.gif">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampmybloodyvalentine.png">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampnin.webp">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampnin2.png">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampnin4.png">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampnin5.png">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampnirvana.jpg">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampnirvanasmile.png">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampnoise.gif">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stamppepsi.gif">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stamppinkfloyd1.gif">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stamppinkfloyd2.png">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stamppinkfloyd3.png">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stamppolybius.gif">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stamppulp.gif">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampqueenlizzy.png">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampradiohead1.png">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampradiohead10.png">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampradiohead11.png">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampradiohead12.png">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampradiohead13.png">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampradiohead16.gif">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampradiohead2.png">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampradiohead3.png">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampradiohead4.png">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampradiohead5.png">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampradiohead6.png">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampradiohead7.png">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampradiohead8.gif">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampradiohead9.png">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampratm1.gif">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stamprhcp.png">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stamprobzombie1.png">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stamprobzombie2.jpg">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stamprootbeer.gif">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampsaw.png">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampsaw2.png">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampsaw3.png">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampskyrim.png">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampslipknot1.png">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampslipknot3.png">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampsmashingpumpkins.png">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampsoad.png">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampsonicyouth.png">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampsoundgarden.gif">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampspongebobepisode.gif">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampstrangerthings.gif">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stamptalkingheads1.png">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stamptalkingheads2.png">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stamptalkingheads3.png">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampthebeatles.png">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stamptool.gif">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stamptverror.png">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampweezer.png">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampthesmiths.png">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampasuka.png">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stamprei.png">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampscottpilgrim.gif">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampsmilingfriends.gif">
+                        <img style="width:6vw;height:3vw;" src="/stamps/stampsmilingfriends2.gif">
+                     </div>
+                     <div class="pinky" style="background-color:#FE9CD7;">
+                        <h2 class="interacttext" style="font-size:1.5vw;color:purple;font-family:myfont3;">Graphics</h2>
+                        <img style="width:9vw;height:9vw;" src="/graphics/graphic7up.gif">
+                        <img style="width:9vw;height:9vw;" src="/graphics/graphiccola.gif">
+                        <img style="width:9vw;height:9vw;" src="/graphics/graphiccube.gif">
+                        <img style="width:9vw;height:9vw;" src="/graphics/graphicdisc.webp">
+                        <img style="width:9vw;height:9vw;" src="/graphics/graphicguitar.webp">
+                        <img style="width:9vw;height:9vw;" src="/graphics/graphicstarborder.gif">
+                        <img style="width:9vw;height:9vw;" src="/graphics/graphictrans.png">
+                        <img style="width:9vw;height:9vw;" src="/graphics/graphicacidbathglittercover.gif">
+                        <img style="width:9vw;height:9vw;" src="/graphics/graphicalien.gif">
+                        <img style="width:9vw;height:9vw;" src="/graphics/graphicalienufo.webp">
+                        <img style="width:9vw;height:9vw;" src="/graphics/graphicarcade.gif">
+                        <img style="width:9vw;height:9vw;" src="/graphics/graphicbassguitar.gif">
+                        <img style="width:9vw;height:9vw;" src="/graphics/graphicbat.gif">
+                        <img style="width:9vw;height:9vw;" src="/graphics/graphicbeatingheart.gif">
+                        <img style="width:9vw;height:9vw;" src="/graphics/graphicbomb.gif">
+                        <img style="width:9vw;height:9vw;" src="/graphics/graphicbonesaw.gif">
+                        <img style="width:9vw;height:9vw;" src="/graphics/graphicbug.gif">
+                        <img style="width:9vw;height:9vw;" src="/graphics/graphiccacodemon.gif">
+                        <img style="width:9vw;height:9vw;" src="/graphics/graphiccat.gif">
+                        <img style="width:4vw;height:3vw;" src="/graphics/graphicchain.gif">
+                        <img style="width:9vw;height:9vw;" src="/graphics/graphiccocacola.gif">
+                        <img style="width:9vw;height:9vw;" src="/graphics/graphiccyberdemon.gif">
+                        <img style="width:9vw;height:9vw;" src="/graphics/graphicdeathglitter.gif">
+                        <img style="width:9vw;height:9vw;" src="/graphics/graphicdonkeykong.gif">
+                        <img style="width:9vw;height:9vw;" src="/graphics/graphicdoomguy.gif">
+                        <img style="width:9vw;height:9vw;" src="/graphics/graphicdoomguyface.gif">
+                        <img style="width:9vw;height:9vw;" src="/graphics/graphicds.gif">
+                        <img style="width:9vw;height:9vw;" src="/graphics/graphicfilmroll.gif">
+                        <img style="width:9vw;height:9vw;" src="/graphics/graphicfunnybear.gif">
+                        <img style="width:9vw;height:9vw;" src="/graphics/graphicgears.png">
+                        <img style="width:9vw;height:9vw;" src="/graphics/graphicghost.gif">
+                        <img style="width:9vw;height:9vw;" src="/graphics/graphicinternet.gif">
+                        <img style="width:9vw;height:9vw;" src="/graphics/graphiclavalamp.gif">
+                        <img style="width:9vw;height:9vw;" src="/graphics/graphiclittlecoffin.gif">
+                        <img style="width:9vw;height:9vw;" src="/graphics/graphiclittleskull.gif">
+                        <img style="width:9vw;height:9vw;" src="/graphics/graphicminipepsi.gif">
+                        <img style="width:9vw;height:9vw;" src="/graphics/graphicpentagram.gif">
+                        <img style="width:9vw;height:9vw;" src="/graphics/graphicpepsispin.gif">
+                        <img style="width:9vw;height:9vw;" src="/graphics/graphicpinky.gif">
+                        <img style="width:9vw;height:9vw;" src="/graphics/graphicpumpkin.gif">
+                        <img style="width:9vw;height:9vw;" src="/graphics/graphicradiohead1.gif">
+                        <img style="width:9vw;height:9vw;" src="/graphics/graphicradiohead2.png">
+                        <img style="width:9vw;height:9vw;" src="/graphics/graphicradiohead3.webp">
+                        <img style="width:9vw;height:9vw;" src="/graphics/graphicrecordplayer.gif">
+                        <img style="width:9vw;height:9vw;" src="/graphics/graphicsevenup.gif">
+                        <img style="width:9vw;height:9vw;" src="/graphics/graphicsevenup2.gif">
+                        <img style="width:9vw;height:9vw;" src="/graphics/graphicsharkswim.gif">
+                        <img style="width:9vw;height:9vw;" src="/graphics/graphicspider.gif">
+                        <img style="width:9vw;height:9vw;" src="/graphics/graphicspinningcd.gif">
+                        <img style="width:9vw;height:9vw;" src="/graphics/graphictape.gif">
+                        <img style="width:9vw;height:9vw;" src="/graphics/graphicworld.gif">
+                        <img style="width:9vw;height:9vw;" src="/graphics/graphiclaceborder.png">
+                        <img style="width:9vw;height:9vw;" src="/graphics/graphicwriting.gif">
+                        <img style="width:9vw;height:9vw;" src="/graphics/graphicmystery.gif">
+                        <img style="width:9vw;height:9vw;" src="/graphics/graphicmusic.gif">
+                        <img style="width:9vw;height:9vw;" src="/graphics/graphiccamera.gif">
+                        <img style="width:9vw;height:9vw;" src="/graphics/graphicart.gif">
+                        <h2 class="interacttext" style="font-size:1.5vw;color:purple;font-family:myfont3;">Dividers</h2>
+                        <img style="width:18vw;height:1.5vw;" src="/graphics/graphichazarddivider.gif">
+                        <img style="width:18vw;height:1.5vw;" src="/graphics/graphicfiredivider.gif">
+                        <img style="width:18vw;height:1.5vw;" src="/graphics/graphicdrippyblooddivider.gif">
+                        <img style="width:18vw;height:1.5vw;" src="/graphics/graphiccheckerdivider.gif">
+                        <img style="width:18vw;height:1.5vw;" src="/graphics/graphicchaindivider.gif">
+                        <img style="width:18vw;height:1.5vw;" src="/graphics/graphicgothicchain.png">
+                        <img style="width:18vw;height:1.5vw;" src="/graphics/graphicthorn.gif">
+                     </div>
+                     <br>
+                     <small>I Don't Own Or Claim To Own Any Of These Graphics</small>
+                  </article>
+               </div>
+            </div>
+            <footer id="text" style="color:red;font-size:1.5vw;font-family:Stencil;text-shadow: 0.2vw 0.2vw 0.3vw yellow;">
+               that's the end
+               <p><a href="#TOP">Jump To Top</a></p>
+            </footer>
+         </div>
+      </center>
+      <script type="text/javascript">
+         // <![CDATA[
+         var colours=new Array('#f00', '#f06', '#f0f', '#f6f', '#f39', '#f9c');
+         var minisize=16; 
+         var maxisize=28; 
+         var hearts=66;
+         var over_or_under="over"; 
+         
+         
+         var x=ox=400;
+         var y=oy=300;
+         var swide=800;
+         var shigh=600;
+         var sleft=sdown=0;
+         var herz=new Array();
+         var herzx=new Array();
+         var herzy=new Array();
+         var herzs=new Array();
+         var kiss=false;
+         
+         if (typeof('addRVLoadEvent')!='function') function addRVLoadEvent(funky) {
+           var oldonload=window.onload;
+           if (typeof(oldonload)!='function') window.onload=funky;
+           else window.onload=function() {
+             if (oldonload) oldonload();
+             funky();
+           }
+         }
+         
+         addRVLoadEvent(mwah);
+         
+         function mwah() { if (document.getElementById) {
+           var i, heart;
+           for (i=0; i<hearts; i++) {
+             heart=createDiv("auto", "auto");
+             heart.style.visibility="hidden";
+         	heart.style.zIndex=(over_or_under=="over")?"1001":"0";
+             heart.style.color=colours[i%colours.length];
+         	heart.style.pointerEvents="none";
+             if (navigator.appName=="Microsoft Internet Explorer") heart.style.filter="alpha(opacity=75)";
+             else heart.style.opacity=0.75;
+             heart.appendChild(document.createTextNode(String.fromCharCode(9733)));
+             document.body.appendChild(heart);
+             herz[i]=heart;
+         	herzy[i]=false;
+           }
+           set_scroll();
+           set_width();
+           herzle();
+         }}
+         
+         function herzle() {
+           var c;
+           if (Math.abs(x-ox)>1 || Math.abs(y-oy)>1) {
+             ox=x;
+             oy=y;
+             for (c=0; c<hearts; c++) if (herzy[c]===false) {
+         	  herz[c].firstChild.nodeValue=String.fromCharCode(9733);
+               herz[c].style.left=(herzx[c]=x-minisize/2)+"px";
+               herz[c].style.top=(herzy[c]=y-minisize)+"px";
+               herz[c].style.fontSize=minisize+"px";
+         	  herz[c].style.fontWeight='normal';
+               herz[c].style.visibility='visible';
+               herzs[c]=minisize;
+               break;
+             }
+           }
+           for (c=0; c<hearts; c++) if (herzy[c]!==false) blow_me_a_kiss(c);
+           setTimeout("herzle()", 40);
+         }
+         
+         document.onmousedown=pucker;
+         document.onmouseup=function(){clearTimeout(kiss);};
+         
+         function pucker() {
+           ox=-1;
+           oy=-1;
+           kiss=setTimeout('pucker()', 100);
+         }
+         
+         function blow_me_a_kiss(i) {
+           herzy[i]-=herzs[i]/minisize+i%2;
+           herzx[i]+=(i%5-2)/5;
+           if (herzy[i]<sdown-herzs[i] || herzx[i]<sleft-herzs[i] || herzx[i]>sleft+swide-herzs[i]) {
+             herz[i].style.visibility="hidden";
+             herzy[i]=false;
+           }
+           else if (herzs[i]>minisize+2 && Math.random()<.5/hearts) break_my_heart(i);
+           else {
+             if (Math.random()<maxisize/herzy[i] && herzs[i]<maxisize) herz[i].style.fontSize=(++herzs[i])+"px";
+             herz[i].style.top=herzy[i]+"px";
+             herz[i].style.left=herzx[i]+"px";
+           }
+         }
+         
+         function break_my_heart(i) {
+           var t;
+           herz[i].firstChild.nodeValue=String.fromCharCode(9733);
+           herz[i].style.fontWeight='bold';
+           herzy[i]=false;
+           for (t=herzs[i]; t<=maxisize; t++) setTimeout('herz['+i+'].style.fontSize="'+t+'px"', 60*(t-herzs[i]));
+           setTimeout('herz['+i+'].style.visibility="hidden";', 60*(t-herzs[i]));
+         }
+         
+         document.onmousemove=mouse;
+         function mouse(e) {
+           if (e) {
+             y=e.pageY;
+             x=e.pageX;
+           }
+           else {
+             set_scroll();
+             y=event.y+sdown;
+             x=event.x+sleft;
+           }
+         }
+         
+         window.onresize=set_width;
+         function set_width() {
+           var sw_min=999999;
+           var sh_min=999999;
+           if (document.documentElement && document.documentElement.clientWidth) {
+             if (document.documentElement.clientWidth>0) sw_min=document.documentElement.clientWidth;
+             if (document.documentElement.clientHeight>0) sh_min=document.documentElement.clientHeight;
+           }
+           if (typeof(self.innerWidth)=='number' && self.innerWidth) {
+             if (self.innerWidth>0 && self.innerWidth<sw_min) sw_min=self.innerWidth;
+             if (self.innerHeight>0 && self.innerHeight<sh_min) sh_min=self.innerHeight;
+           }
+           if (document.body.clientWidth) {
+             if (document.body.clientWidth>0 && document.body.clientWidth<sw_min) sw_min=document.body.clientWidth;
+             if (document.body.clientHeight>0 && document.body.clientHeight<sh_min) sh_min=document.body.clientHeight;
+           }
+           if (sw_min==999999 || sh_min==999999) {
+             sw_min=800;
+             sh_min=600;
+           }
+           swide=sw_min;
+           shigh=sh_min;
+         }
+         
+         window.onscroll=set_scroll;
+         function set_scroll() {
+           if (typeof(self.pageYOffset)=='number') {
+             sdown=self.pageYOffset;
+             sleft=self.pageXOffset;
+           }
+           else if (document.body && (document.body.scrollTop || document.body.scrollLeft)) {
+             sdown=document.body.scrollTop;
+             sleft=document.body.scrollLeft;
+           }
+           else if (document.documentElement && (document.documentElement.scrollTop || document.documentElement.scrollLeft)) {
+             sleft=document.documentElement.scrollLeft;
+             sdown=document.documentElement.scrollTop;
+           }
+           else {
+             sdown=0;
+             sleft=0;
+           }
+         }
+         
+         function createDiv(height, width) {
+           var div=document.createElement("div");
+           div.style.position="absolute";
+           div.style.height=height;
+           div.style.width=width;
+           div.style.overflow="hidden";
+           div.style.backgroundColor="transparent";
+           return (div);
+         }
+         // ]]>
+      </script>
+      <script>
+         var b = document.body;
+         var imgurl = "/graphics/graphicsevenup2.gif";
+         var size = [10, 20];
+         function rand(min, max)
+         {
+         return Math.floor(Math.random() * (max - min + 1) + min)
+         }
+         function getSize()
+         {
+         return rand(size[0], size[1]);
+         }
+         function lerp(a,b,f)
+         {
+         return (b-a)*f+a;
+         }
+         function heart(x,y)
+         {
+         var s = getSize();
+         x -= s/2;
+         y -= s/2;
+         x = Math.floor(x) + rand(-5, 5);
+         y = Math.floor(y) + rand(-5, 5);
+         var fx = x + rand(-40, 40);
+         var fy = y + rand(-40, 40);
+         var i = document.createElement("img");
+         i.src = imgurl;
+         i.style = `pointer-events: none; position: fixed; width: ${s}px; left: ${x}px; top: ${y}px; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; z-index: 1000000;`;
+         b.appendChild(i);
+         var f = 0;
+         var interval;
+         interval = setInterval(function() {
+         var _x = Math.floor(lerp(x, fx, f));
+         var _y = Math.floor(lerp(y, fy, f));
+         i.style = `pointer-events: none; position: fixed; width: ${s}px; left: ${_x}px; top: ${_y}px; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; z-index: 1000000;`;
+         i.style.opacity = 1-f;
+         f += 0.01;
+         if (f > 1)
+         {
+         clearInterval(interval);
+         b.removeChild(i);
+         }
+         }, 10);
+         }
+         function bro(x,y)
+         {
+         for (var i = 0; i < 5; i++)
+         {
+         heart(x,y);
+         }
+         }
+         b.addEventListener("click", function(event){
+         var x = event.clientX;
+         var y = event.clientY;
+         bro(x,y);
+         });
+         
+           
+      </script>
+      <script type="text/javascript">
+         function tb8_makeArray(n){
+         this.length = n;
+         return this.length;
+         }
+         tb8_messages = new tb8_makeArray(3);
+         tb8_messages[0] = "Graphics Page";
+         tb8_messages[1] = "Graphics Page";
+         tb8_messages[2] = "Graphics Page";
+         tb8_rptType = 'infinite';
+         tb8_rptNbr = 5;
+         tb8_speed = 100;
+         tb8_delay = 2000;
+         var tb8_counter=1;
+         var tb8_currMsg=0;
+         var tb8_tekst ="";
+         var tb8_i=0;
+         var tb8_TID = null;
+         function tb8_pisi(){
+         tb8_tekst = tb8_tekst + tb8_messages[tb8_currMsg].substring(tb8_i, tb8_i+1);
+         document.title = tb8_tekst;
+         tb8_sp=tb8_speed;
+         tb8_i++;
+         if (tb8_i==tb8_messages[tb8_currMsg].length){
+         tb8_currMsg++; tb8_i=0; tb8_tekst="";tb8_sp=tb8_delay;
+         }
+         if (tb8_currMsg == tb8_messages.length){
+         if ((tb8_rptType == 'finite') && (tb8_counter==tb8_rptNbr)){
+         clearTimeout(tb8_TID);
+         return;
+         }
+         tb8_counter++;
+         tb8_currMsg = 0;
+         }
+         tb8_TID = setTimeout("tb8_pisi()", tb8_sp);
+         }
+         tb8_pisi()
+      </script>
+   </body>
+</html>
