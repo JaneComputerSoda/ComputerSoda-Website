@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html>
+<!-- PLEASE DO NOT STEAL MY CODE! Thank You :3 -->
+   <head>
+      <style>
+         @font-face {
+         font-family: "font1";
+         src: url("https://computersoda.neocities.org/misc_files/font1.ttf");
+         }
+         a:hover {
+         color: purple;
+         }
+         #sodabounce {
+         -webkit-animation: pop 1s ease-in-out infinite alternate;
+         animation: pop 1s ease-in-out infinite alternate;
+         -moz-animation: pop 1s ease-in-out infinite alternate;
+         }
+         @keyframes pop {
+         from {
+         transform:scale(0.95)
+         }
+         50% {
+         transform:scale(1)
+         }
+         to {
+         transform:scale(0.95)
+         }
+         }
+         @-webkit-keyframes pop {
+         from {
+         -webkit-transform:scale(0.95)
+         }
+         50% {
+         -webkit-transform:scale(1)
+         }
+         to {
+         -webkit-transform:scale(0.95)
+         }
+         }
+         @keyframes spin {
+         100% {
+         transform:rotate(360deg);
+         }
+         }
+         #text:hover{ 
+         transition: .2s ease;
+         transform: translate(0, -12px);
+         }  
+         body {
+         cursor: url("/icons/cursor.ico"), default;
+         }
+         body {
+         background-image:url('/backgrounds/mterie.jpg');
+         background-repeat: no-repeat;
+         background-size: cover;
+         }
+         head {
+         background-image:url('/backgrounds/mterie.jpg');
+         }
+         .topnav {
+         background-color: gray;
+         background-image: linear-gradient(to bottom, DarkGray, LightGray);
+         overflow: hidden;
+         border-style: outset;
+         border-width: 0.3vw; thick;
+         border-color: LightGray;
+         border-radius: 1vw;
+         text-shadow: 0.1vw 0.1vw red;
+         font-weight: bold;
+         font-family: "Courier New"
+         }
+         .topnav a {
+         float: left;
+         color: black;
+         text-align: center;
+         padding: 0.5vw 1vw;
+         text-decoration: none;
+         font-size: 1vw;
+         }
+         .topnav a:hover {
+         background-image: linear-gradient(to bottom, black, gray);
+         color: black;
+         }
+         .topnav a.active {
+         background-color: DimGray;
+         background-image: linear-gradient(to bottom, DimGray, DarkGray);
+         color: black;
+         }
+         h1 {
+         text-shadow: 0.2vw 0.2vw 0.3vw lime;
+         font-family: "Stencil"
+         }
+         p {
+         font-family: "Stencil"
+         }
+         .box {
+         width: 40vw;
+         height: 50vw
+         padding: 0vw;
+         border: 2vw ;
+         margin-top: 1.5vw;
+         margin-left: 0.5vw;
+         margin-right: 1vw;
+         margin-bottom: 1vw;
+         background-image: linear-gradient(to bottom, gray, lightgray);
+         border-style: outset;
+         border-width: 0.3vw; thick;
+         border-color: LightGray;
+         border-radius: 1vw;
+         overflow: auto;
+         }
+         .flex-container {
+         display: flex; 
+         flex-direction: row; 
+         justify-content: space-around;
+         align-items: flex-start; 
+         }
+         ::-webkit-scrollbar {
+         width: 1vw;
+         height: 3vw;
+         }
+         ::-webkit-scrollbar-track {
+         background-color: lightgray;
+         image-rendering: pixelated;
+         -webkit-filter: grayscale(100%);
+         -moz-filter: grayscale(100%);
+         -ms-filter: grayscale(100%);
+         -o-filter: grayscale(100%);
+         filter: grayscale(100%);
+         }
+         ::-webkit-scrollbar-track:active {
+         background-color: lightgray;
+         -webkit-filter: grayscale(100%);
+         -moz-filter: grayscale(100%);
+         -ms-filter: grayscale(100%);
+         -o-filter: grayscale(100%);
+         filter: grayscale(100%);
+         }
+         ::-webkit-scrollbar-thumb {
+         border-top: 0.1vw solid #cccccc;
+         border-left: 0.1vw solid #cccccc;
+         border-right: 0.1vw solid black;
+         border-bottom: 0.1vw solid black;
+         box-shadow: inset 0.1vw 0.1vw 0 0 white, inset -0.1vw -0.1vw 0 0 #868a8e;
+         width: 1vw;
+         height: 1vw;
+         background-color: #cccccc;
+         z-index: 1;
+         }
+         ::-webkit-scrollbar-corner {
+         background-color: #cccccc;
+         }
+         ::-webkit-resizer {
+         width: 1vw;
+         height: 1vw;
+         background-color: #cccccc;
+         background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAN0lEQVR4Ae3MgQUAMBRDwU5fFF05lb/CARTBw2Ulof0DxPtcwp3hNuEYnjbcEW4TjuFpwx3h9gMWGgZ2Y/PT2gAAAABJRU5ErkJggg==");
+         background-position: bottom right;
+         background-repeat: no-repeat;
+         image-rendering: pixelated;
+         }
+         ::-webkit-scrollbar-button,
+         .scroll::-webkit-scrollbar-button {
+         border-top: 0.1vw solid #cccccc;
+         border-left: 0.1vw solid #cccccc;
+         border-right: 0.1vw solid black;
+         border-bottom: 0.1vw solid black;
+         box-shadow: inset 0.1vw 0.1vw 0 0 white, inset -0.1vw -0.1vw 0 0 #868a8e;
+         display: block;
+         width: 1px;
+         height: 16px;
+         background-color: #cccccc;
+         image-rendering: pixelated;
+         background-repeat: no-repeat;
+         background-position: center center;
+         }
+         ::-webkit-scrollbar-button:active,
+         .scroll::-webkit-scrollbar-button:active {
+         background-position: 2vw 2vw;
+         }
+         ::-webkit-scrollbar-button:horizontal:decrement,
+         .scroll::-webkit-scrollbar-button:horizontal:decrement {
+         background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAQAAAD8fJRsAAAAHklEQVQY02NgoBT8xyX8H5fwf1zCpOjAYwceV1EEAAO2D/HsQ4vsAAAAAElFTkSuQmCC");
+         }
+         ::-webkit-scrollbar-button:horizontal:increment,
+         .scroll::-webkit-scrollbar-button:horizontal:increment {
+         background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAQAAAD8fJRsAAAAHUlEQVQY02NgIB/8xy3xH7fEf9wS/0nUQZqrKAYAK44P8ZRmzLQAAAAASUVORK5CYII=");
+         }
+         ::-webkit-scrollbar-button:vertical:decrement,
+         .scroll::-webkit-scrollbar-button:vertical:decrement {
+         background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAAGklEQVR4AWMYxuA/SYphmETFhDX9x4mHGQAAcL4P8dQiMq8AAAAASUVORK5CYII=");
+         }
+         ::-webkit-scrollbar-button:vertical:increment,
+         .scroll::-webkit-scrollbar-button:vertical:increment {
+         background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAQAAAD8fJRsAAAAF0lEQVQY02NgoBf4jwJxSOHQhcNAOgMAWWAP8Rv2U3UAAAAASUVORK5CYII=");
+         }
+         ::-webkit-scrollbar-button:horizontal:increment:start,
+         .scroll::-webkit-scrollbar-button:horizontal:increment:start {
+         display: none;
+         }
+         ::-webkit-scrollbar-button:horizontal:decrement:end,
+         .scroll::-webkit-scrollbar-button:horizontal:decrement:end {
+         display: none;
+         }
+         ::-webkit-scrollbar-button:vertical:increment:start,
+         .scroll::-webkit-scrollbar-button:vertical:increment:start {
+         display: none;
+         }
+         ::-webkit-scrollbar-button:vertical:decrement:end,
+         .scroll::-webkit-scrollbar-button:vertical:decrement:end {
+         display: none;
+         }
+         ::-webkit-scrollbar-button:active,
+         .scroll::-webkit-scrollbar-button:active {
+         border-top: 0.1vw solid #868a8e;
+         border-left: 0.1vw solid #868a8e;
+         border-bottom: 0.1vw solid #868a8e;
+         border-right: 0.1vw solid #868a8e;
+         box-shadow: none;
+         }
+         footer {
+         text-align: center;
+         padding: 1vw;
+         border: 2vw ;
+         margin-top: 0.5vw;
+         margin-left: 0.5vw;
+         margin-right: 1vw;
+         margin-bottom: 1vw;
+         background-image: linear-gradient(to bottom, gray, lightgray);
+         border-style: outset;
+         border-width: 0.3vw; thick;
+         border-color: LightGray;
+         border-radius: 1vw;
+         overflow: auto;
+         }
+      </style>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>The Microphones Shrine</title>
+      <link rel="icon"  href="/icons/favicon.ico">
+   </head>
+   <body>
+      <center>
+         <div style="width:85vw;">
+            <a id="TOP" href="https://computersoda.neocities.org/home"> <img id="sodabounce" style="width:50vw;height:15vw;" src="/icons/sitelogo.png"> </a>
+            <div class="topnav">
+               <a href="https://computersoda.neocities.org/home">Home</a>
+               <a href="https://computersoda.neocities.org/about">About</a>
+               <a href="https://computersoda.neocities.org/photos">Photos</a>
+               <a href="https://computersoda.neocities.org/art">Art</a>
+               <a href="https://computersoda.neocities.org/music">Music</a>
+               <a href="https://computersoda.neocities.org/thoughts">Thoughts</a>
+               <a href="https://computersoda.neocities.org/writing">Writings</a>
+               <a href="https://computersoda.neocities.org/changes">Changelog</a>
+               <a href="https://computersoda.neocities.org/graphics">Graphics</a>
+               <a href="https://computersoda.neocities.org/resources">Resources</a>
+               <a href="https://computersoda.neocities.org/sitemap">Site Map</a>
+               <a href="https://computersoda.neocities.org/shop">Gift Store</a>
+               <a href="https://computersoda.neocities.org/projects">Projects</a>
+               <a class="active" href="https://computersoda.neocities.org/shrines">Shrines</a>
+            </div>
+            <img src="/art/themicrophonescollage.png" style="margin-top:2vw;width:80vw;height:250vw;">
+            <div style="width:30vw;">
+               <h2 style="font-family:font1;"> What is 'The Microphones'?</h2>
+               <p style="font-family:font1;">'The Microphones' was a band created by Phil Elverum, in Anacortes, Washington. It only had one member, which was Phil himself, the genres of music that he made were a blend of Indie Folk, Indie Rock, Experimental, and Lo-Fi. His first studio album was 'Don't Wake Me Up' released in 1999 and distributed by K Records, soon followed by multiple other albums until Phil moved onto other musical projects.</p>
+               <br>
+               <h2 style="font-family:font1;">The Glow Pt. 2</h2>
+               <p style="font-family:font1;">My favorite album by 'The Microphones' is 'The Glow Pt. 2' released in 2001. The title of this album is the continuation of a previous song by Elverum, titled 'The Glow', and the album cover came from the cover of an old dutch cook-book. The album is a mix of Indie Folk, Rock, Lo-Fi, and Experimental, it was recorded from May 23rd, 2000, to March 23rd, 2001, at Dub Narcotics Studio in Olympia, Washington. There are a total of 20 tracks on this album, which are: 'I Want Wind To Blow', 'The Glow Pt. 2', 'The Moon', 'Headless Horseman', 'My Roots Are Strong And Deep', 'Instrumental', 'The Mansion', '(Something)', '(Something) - 1', 'I'll Not Contain You', 'The Gleam Pt. 2', 'Map', 'You'll Be In The Air', 'I Want To Be Cold', 'I Am Bored', 'I Felt My Size', 'Instrumental - 2', 'I Felt Your Shape', 'Samurai Sword', and 'My Warm Blood'. This album tells a story of the feelings and emotions the narrator feels while going through a breakup, eventually culminating in the narrator's death. This is my favorite album of all time.</p>
+            </div>
+            <footer id="text" style="color:red;font-size:1.5vw;font-family:Stencil;text-shadow: 0.2vw 0.2vw 0.3vw yellow;">
+               that's the end
+               <p><a href="#TOP">Jump To Top</a></p>
+            </footer>
+         </div>
+      </center>
+      <script type="text/javascript">
+         // <![CDATA[
+         var colours=new Array('#f00', '#f06', '#f0f', '#f6f', '#f39', '#f9c');
+         var minisize=16; 
+         var maxisize=28; 
+         var hearts=66;
+         var over_or_under="over"; 
+         
+         
+         var x=ox=400;
+         var y=oy=300;
+         var swide=800;
+         var shigh=600;
+         var sleft=sdown=0;
+         var herz=new Array();
+         var herzx=new Array();
+         var herzy=new Array();
+         var herzs=new Array();
+         var kiss=false;
+         
+         if (typeof('addRVLoadEvent')!='function') function addRVLoadEvent(funky) {
+           var oldonload=window.onload;
+           if (typeof(oldonload)!='function') window.onload=funky;
+           else window.onload=function() {
+             if (oldonload) oldonload();
+             funky();
+           }
+         }
+         
+         addRVLoadEvent(mwah);
+         
+         function mwah() { if (document.getElementById) {
+           var i, heart;
+           for (i=0; i<hearts; i++) {
+             heart=createDiv("auto", "auto");
+             heart.style.visibility="hidden";
+         	heart.style.zIndex=(over_or_under=="over")?"1001":"0";
+             heart.style.color=colours[i%colours.length];
+         	heart.style.pointerEvents="none";
+             if (navigator.appName=="Microsoft Internet Explorer") heart.style.filter="alpha(opacity=75)";
+             else heart.style.opacity=0.75;
+             heart.appendChild(document.createTextNode(String.fromCharCode(9733)));
+             document.body.appendChild(heart);
+             herz[i]=heart;
+         	herzy[i]=false;
+           }
+           set_scroll();
+           set_width();
+           herzle();
+         }}
+         
+         function herzle() {
+           var c;
+           if (Math.abs(x-ox)>1 || Math.abs(y-oy)>1) {
+             ox=x;
+             oy=y;
+             for (c=0; c<hearts; c++) if (herzy[c]===false) {
+         	  herz[c].firstChild.nodeValue=String.fromCharCode(9733);
+               herz[c].style.left=(herzx[c]=x-minisize/2)+"px";
+               herz[c].style.top=(herzy[c]=y-minisize)+"px";
+               herz[c].style.fontSize=minisize+"px";
+         	  herz[c].style.fontWeight='normal';
+               herz[c].style.visibility='visible';
+               herzs[c]=minisize;
+               break;
+             }
+           }
+           for (c=0; c<hearts; c++) if (herzy[c]!==false) blow_me_a_kiss(c);
+           setTimeout("herzle()", 40);
+         }
+         
+         document.onmousedown=pucker;
+         document.onmouseup=function(){clearTimeout(kiss);};
+         
+         function pucker() {
+           ox=-1;
+           oy=-1;
+           kiss=setTimeout('pucker()', 100);
+         }
+         
+         function blow_me_a_kiss(i) {
+           herzy[i]-=herzs[i]/minisize+i%2;
+           herzx[i]+=(i%5-2)/5;
+           if (herzy[i]<sdown-herzs[i] || herzx[i]<sleft-herzs[i] || herzx[i]>sleft+swide-herzs[i]) {
+             herz[i].style.visibility="hidden";
+             herzy[i]=false;
+           }
+           else if (herzs[i]>minisize+2 && Math.random()<.5/hearts) break_my_heart(i);
+           else {
+             if (Math.random()<maxisize/herzy[i] && herzs[i]<maxisize) herz[i].style.fontSize=(++herzs[i])+"px";
+             herz[i].style.top=herzy[i]+"px";
+             herz[i].style.left=herzx[i]+"px";
+           }
+         }
+         
+         function break_my_heart(i) {
+           var t;
+           herz[i].firstChild.nodeValue=String.fromCharCode(9733);
+           herz[i].style.fontWeight='bold';
+           herzy[i]=false;
+           for (t=herzs[i]; t<=maxisize; t++) setTimeout('herz['+i+'].style.fontSize="'+t+'px"', 60*(t-herzs[i]));
+           setTimeout('herz['+i+'].style.visibility="hidden";', 60*(t-herzs[i]));
+         }
+         
+         document.onmousemove=mouse;
+         function mouse(e) {
+           if (e) {
+             y=e.pageY;
+             x=e.pageX;
+           }
+           else {
+             set_scroll();
+             y=event.y+sdown;
+             x=event.x+sleft;
+           }
+         }
+         
+         window.onresize=set_width;
+         function set_width() {
+           var sw_min=999999;
+           var sh_min=999999;
+           if (document.documentElement && document.documentElement.clientWidth) {
+             if (document.documentElement.clientWidth>0) sw_min=document.documentElement.clientWidth;
+             if (document.documentElement.clientHeight>0) sh_min=document.documentElement.clientHeight;
+           }
+           if (typeof(self.innerWidth)=='number' && self.innerWidth) {
+             if (self.innerWidth>0 && self.innerWidth<sw_min) sw_min=self.innerWidth;
+             if (self.innerHeight>0 && self.innerHeight<sh_min) sh_min=self.innerHeight;
+           }
+           if (document.body.clientWidth) {
+             if (document.body.clientWidth>0 && document.body.clientWidth<sw_min) sw_min=document.body.clientWidth;
+             if (document.body.clientHeight>0 && document.body.clientHeight<sh_min) sh_min=document.body.clientHeight;
+           }
+           if (sw_min==999999 || sh_min==999999) {
+             sw_min=800;
+             sh_min=600;
+           }
+           swide=sw_min;
+           shigh=sh_min;
+         }
+         
+         window.onscroll=set_scroll;
+         function set_scroll() {
+           if (typeof(self.pageYOffset)=='number') {
+             sdown=self.pageYOffset;
+             sleft=self.pageXOffset;
+           }
+           else if (document.body && (document.body.scrollTop || document.body.scrollLeft)) {
+             sdown=document.body.scrollTop;
+             sleft=document.body.scrollLeft;
+           }
+           else if (document.documentElement && (document.documentElement.scrollTop || document.documentElement.scrollLeft)) {
+             sleft=document.documentElement.scrollLeft;
+             sdown=document.documentElement.scrollTop;
+           }
+           else {
+             sdown=0;
+             sleft=0;
+           }
+         }
+         
+         function createDiv(height, width) {
+           var div=document.createElement("div");
+           div.style.position="absolute";
+           div.style.height=height;
+           div.style.width=width;
+           div.style.overflow="hidden";
+           div.style.backgroundColor="transparent";
+           return (div);
+         }
+         // ]]>
+      </script>
+      <script>
+         var b = document.body;
+         var imgurl = "/graphics/graphicsevenup2.gif";
+         var size = [10, 20];
+         function rand(min, max)
+         {
+         return Math.floor(Math.random() * (max - min + 1) + min)
+         }
+         function getSize()
+         {
+         return rand(size[0], size[1]);
+         }
+         function lerp(a,b,f)
+         {
+         return (b-a)*f+a;
+         }
+         function heart(x,y)
+         {
+         var s = getSize();
+         x -= s/2;
+         y -= s/2;
+         x = Math.floor(x) + rand(-5, 5);
+         y = Math.floor(y) + rand(-5, 5);
+         var fx = x + rand(-40, 40);
+         var fy = y + rand(-40, 40);
+         var i = document.createElement("img");
+         i.src = imgurl;
+         i.style = `pointer-events: none; position: fixed; width: ${s}px; left: ${x}px; top: ${y}px; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; z-index: 1000000;`;
+         b.appendChild(i);
+         var f = 0;
+         var interval;
+         interval = setInterval(function() {
+         var _x = Math.floor(lerp(x, fx, f));
+         var _y = Math.floor(lerp(y, fy, f));
+         i.style = `pointer-events: none; position: fixed; width: ${s}px; left: ${_x}px; top: ${_y}px; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; z-index: 1000000;`;
+         i.style.opacity = 1-f;
+         f += 0.01;
+         if (f > 1)
+         {
+         clearInterval(interval);
+         b.removeChild(i);
+         }
+         }, 10);
+         }
+         function bro(x,y)
+         {
+         for (var i = 0; i < 5; i++)
+         {
+         heart(x,y);
+         }
+         }
+         b.addEventListener("click", function(event){
+         var x = event.clientX;
+         var y = event.clientY;
+         bro(x,y);
+         });
+         
+           
+      </script>
+      <script type="text/javascript">
+         function tb8_makeArray(n){
+         this.length = n;
+         return this.length;
+         }
+         tb8_messages = new tb8_makeArray(3);
+         tb8_messages[0] = "The Microphones Shrine";
+         tb8_messages[1] = "The Microphones Shrine";
+         tb8_messages[2] = "The Microphones Shrine";
+         tb8_rptType = 'infinite';
+         tb8_rptNbr = 5;
+         tb8_speed = 100;
+         tb8_delay = 2000;
+         var tb8_counter=1;
+         var tb8_currMsg=0;
+         var tb8_tekst ="";
+         var tb8_i=0;
+         var tb8_TID = null;
+         function tb8_pisi(){
+         tb8_tekst = tb8_tekst + tb8_messages[tb8_currMsg].substring(tb8_i, tb8_i+1);
+         document.title = tb8_tekst;
+         tb8_sp=tb8_speed;
+         tb8_i++;
+         if (tb8_i==tb8_messages[tb8_currMsg].length){
+         tb8_currMsg++; tb8_i=0; tb8_tekst="";tb8_sp=tb8_delay;
+         }
+         if (tb8_currMsg == tb8_messages.length){
+         if ((tb8_rptType == 'finite') && (tb8_counter==tb8_rptNbr)){
+         clearTimeout(tb8_TID);
+         return;
+         }
+         tb8_counter++;
+         tb8_currMsg = 0;
+         }
+         tb8_TID = setTimeout("tb8_pisi()", tb8_sp);
+         }
+         tb8_pisi()
+      </script>
+   </body>
+</html>
