@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html>
+<!-- PLEASE DO NOT STEAL MY CODE! Thank You :3 -->
+   <head>
+      <style>
+         .marquee {
+         transform: rotate(-10deg); 
+         border-top: 1vw solid transparent;
+         border-image: url(/graphics/graphicchaindivider.gif) 50 stretch;
+         transition: transform 0.3s ease;
+         border-bottom: 1vw solid transparent;
+         }
+         .marquee:hover {
+         transform: rotate(15deg);
+         transform: scale(1.2, 1.2);
+         }
+         @keyframes flicker {
+         0% {
+         opacity: 0.27861;
+         }
+         5% {
+         opacity: 0.34769;
+         }
+         10% {
+         opacity: 0.23604;
+         }
+         15% {
+         opacity: 0.90626;
+         }
+         20% {
+         opacity: 0.18128;
+         }
+         25% {
+         opacity: 0.83891;
+         }
+         30% {
+         opacity: 0.65583;
+         }
+         35% {
+         opacity: 0.67807;
+         }
+         40% {
+         opacity: 0.26559;
+         }
+         45% {
+         opacity: 0.84693;
+         }
+         50% {
+         opacity: 0.96019;
+         }
+         55% {
+         opacity: 0.08594;
+         }
+         60% {
+         opacity: 0.20313;
+         }
+         65% {
+         opacity: 0.71988;
+         }
+         70% {
+         opacity: 0.53455;
+         }
+         75% {
+         opacity: 0.37288;
+         }
+         80% {
+         opacity: 0.71428;
+         }
+         85% {
+         opacity: 0.70419;
+         }
+         90% {
+         opacity: 0.7003;
+         }
+         95% {
+         opacity: 0.36108;
+         }
+         100% {
+         opacity: 0.24387;
+         }
+         }
+         @keyframes textShadow {
+         0% {
+         text-shadow: 0.4389924193300864px 0 1px rgba(0,30,255,0.5), -0.4389924193300864px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+         }
+         5% {
+         text-shadow: 2.7928974010788217px 0 1px rgba(0,30,255,0.5), -2.7928974010788217px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+         }
+         10% {
+         text-shadow: 0.02956275843481219px 0 1px rgba(0,30,255,0.5), -0.02956275843481219px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+         }
+         15% {
+         text-shadow: 0.40218538552878136px 0 1px rgba(0,30,255,0.5), -0.40218538552878136px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+         }
+         20% {
+         text-shadow: 3.4794037899852017px 0 1px rgba(0,30,255,0.5), -3.4794037899852017px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+         }
+         25% {
+         text-shadow: 1.6125630401149584px 0 1px rgba(0,30,255,0.5), -1.6125630401149584px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+         }
+         30% {
+         text-shadow: 0.7015590085143956px 0 1px rgba(0,30,255,0.5), -0.7015590085143956px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+         }
+         35% {
+         text-shadow: 3.896914047650351px 0 1px rgba(0,30,255,0.5), -3.896914047650351px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+         }
+         40% {
+         text-shadow: 3.870905614848819px 0 1px rgba(0,30,255,0.5), -3.870905614848819px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+         }
+         45% {
+         text-shadow: 2.231056963361899px 0 1px rgba(0,30,255,0.5), -2.231056963361899px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+         }
+         50% {
+         text-shadow: 0.08084290417898504px 0 1px rgba(0,30,255,0.5), -0.08084290417898504px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+         }
+         55% {
+         text-shadow: 2.3758461067427543px 0 1px rgba(0,30,255,0.5), -2.3758461067427543px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+         }
+         60% {
+         text-shadow: 2.202193051050636px 0 1px rgba(0,30,255,0.5), -2.202193051050636px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+         }
+         65% {
+         text-shadow: 2.8638780614874975px 0 1px rgba(0,30,255,0.5), -2.8638780614874975px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+         }
+         70% {
+         text-shadow: 0.48874025155497314px 0 1px rgba(0,30,255,0.5), -0.48874025155497314px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+         }
+         75% {
+         text-shadow: 1.8948491305757957px 0 1px rgba(0,30,255,0.5), -1.8948491305757957px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+         }
+         80% {
+         text-shadow: 0.0833037308038857px 0 1px rgba(0,30,255,0.5), -0.0833037308038857px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+         }
+         85% {
+         text-shadow: 0.09769827255241735px 0 1px rgba(0,30,255,0.5), -0.09769827255241735px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+         }
+         90% {
+         text-shadow: 3.443339761481782px 0 1px rgba(0,30,255,0.5), -3.443339761481782px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+         }
+         95% {
+         text-shadow: 2.1841838852799786px 0 1px rgba(0,30,255,0.5), -2.1841838852799786px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+         }
+         100% {
+         text-shadow: 2.6208764473832513px 0 1px rgba(0,30,255,0.5), -2.6208764473832513px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+         }
+         }
+         .crt::after {
+         content: " ";
+         display: block;
+         position: fixed;
+         top: 0;
+         left: 0;
+         bottom: 0;
+         right: 0;
+         background: rgba(18, 16, 16, 0.1);
+         opacity: 0;
+         z-index: 2;
+         pointer-events: none;
+         animation: flicker 0.15s infinite;
+         }
+         .crt::before {
+         content: " ";
+         display: block;
+         position: fixed;
+         top: 0;
+         left: 0;
+         bottom: 0;
+         right: 0;
+         background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+         z-index: 2;
+         background-size: 100% 2px, 3px 100%;
+         pointer-events: none;
+         }
+         .crt {
+         animation: textShadow 1.6s infinite;
+         }
+         body {
+         cursor: url("/icons/cursor.ico"), default;
+         }
+         body {
+         background-image:url('/backgrounds/stars.png');
+         }
+         head {
+         background-image:url('/backgrounds/stars.png');
+         }
+         .topnav {
+         background-color: gray;
+         background-image: linear-gradient(to bottom, DarkGray, LightGray);
+         overflow: hidden;
+         border-style: outset;
+         border-width: 0.3vw; thick;
+         border-color: LightGray;
+         border-radius: 1vw;
+         text-shadow: 0.1vw 0.1vw red;
+         font-weight: bold;
+         font-family: "Courier New"
+         }
+         .topnav a {
+         float: left;
+         color: black;
+         text-align: center;
+         padding: 0.5vw 1vw;
+         text-decoration: none;
+         font-size: 1vw;
+         }
+         .topnav a:hover {
+         background-image: linear-gradient(to bottom, black, gray);
+         color: black;
+         }
+         .topnav a.active {
+         background-color: DimGray;
+         background-image: linear-gradient(to bottom, DimGray, DarkGray);
+         color: black;
+         }
+         h1 {
+         font-family: "Stencil"
+         }
+         p {
+         font-family: "courier new";
+         color: red;
+         font-weight: 900;
+         text-shadow: 5 5 1vw black;
+         }
+         .box {
+         width: 40vw;
+         height: 50vw
+         padding: 0vw;
+         border: 2vw ;
+         margin-top: 1.5vw;
+         margin-left: 0.5vw;
+         margin-right: 1vw;
+         margin-bottom: 1vw;
+         background-image: linear-gradient(to bottom, gray, lightgray);
+         border-style: outset;
+         border-width: 0.3vw; thick;
+         border-color: LightGray;
+         border-radius: 1vw;
+         overflow: auto;
+         }
+         .flex-container {
+         display: flex; 
+         flex-direction: row; 
+         justify-content: space-around; 
+         align-items: flex-start; 
+         }
+         ::-webkit-scrollbar {
+         width: 1vw;
+         height: 3vw;
+         }
+         ::-webkit-scrollbar-track {
+         background-color: lightgray;
+         image-rendering: pixelated;
+         -webkit-filter: grayscale(100%);
+         -moz-filter: grayscale(100%);
+         -ms-filter: grayscale(100%);
+         -o-filter: grayscale(100%);
+         filter: grayscale(100%);
+         }
+         ::-webkit-scrollbar-track:active {
+         background-color: lightgray;
+         -webkit-filter: grayscale(100%);
+         -moz-filter: grayscale(100%);
+         -ms-filter: grayscale(100%);
+         -o-filter: grayscale(100%);
+         filter: grayscale(100%);
+         }
+         ::-webkit-scrollbar-thumb {
+         border-top: 0.1vw solid #cccccc;
+         border-left: 0.1vw solid #cccccc;
+         border-right: 0.1vw solid black;
+         border-bottom: 0.1vw solid black;
+         box-shadow: inset 0.1vw 0.1vw 0 0 white, inset -0.1vw -0.1vw 0 0 #868a8e;
+         width: 1vw;
+         height: 1vw;
+         background-color: #cccccc;
+         z-index: 1;
+         }
+         ::-webkit-scrollbar-corner {
+         background-color: #cccccc;
+         }
+         ::-webkit-resizer {
+         width: 1vw;
+         height: 1vw;
+         background-color: #cccccc;
+         background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAN0lEQVR4Ae3MgQUAMBRDwU5fFF05lb/CARTBw2Ulof0DxPtcwp3hNuEYnjbcEW4TjuFpwx3h9gMWGgZ2Y/PT2gAAAABJRU5ErkJggg==");
+         background-position: bottom right;
+         background-repeat: no-repeat;
+         image-rendering: pixelated;
+         }
+         ::-webkit-scrollbar-button,
+         .scroll::-webkit-scrollbar-button {
+         border-top: 0.1vw solid #cccccc;
+         border-left: 0.1vw solid #cccccc;
+         border-right: 0.1vw solid black;
+         border-bottom: 0.1vw solid black;
+         box-shadow: inset 0.1vw 0.1vw 0 0 white, inset -0.1vw -0.1vw 0 0 #868a8e;
+         display: block;
+         width: 1px;
+         height: 16px;
+         background-color: #cccccc;
+         image-rendering: pixelated;
+         background-repeat: no-repeat;
+         background-position: center center;
+         }
+         ::-webkit-scrollbar-button:active,
+         .scroll::-webkit-scrollbar-button:active {
+         background-position: 2vw 2vw;
+         }
+         ::-webkit-scrollbar-button:horizontal:decrement,
+         .scroll::-webkit-scrollbar-button:horizontal:decrement {
+         background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAQAAAD8fJRsAAAAHklEQVQY02NgoBT8xyX8H5fwf1zCpOjAYwceV1EEAAO2D/HsQ4vsAAAAAElFTkSuQmCC");
+         }
+         ::-webkit-scrollbar-button:horizontal:increment,
+         .scroll::-webkit-scrollbar-button:horizontal:increment {
+         background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAQAAAD8fJRsAAAAHUlEQVQY02NgIB/8xy3xH7fEf9wS/0nUQZqrKAYAK44P8ZRmzLQAAAAASUVORK5CYII=");
+         }
+         ::-webkit-scrollbar-button:vertical:decrement,
+         .scroll::-webkit-scrollbar-button:vertical:decrement {
+         background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAAGklEQVR4AWMYxuA/SYphmETFhDX9x4mHGQAAcL4P8dQiMq8AAAAASUVORK5CYII=");
+         }
+         ::-webkit-scrollbar-button:vertical:increment,
+         .scroll::-webkit-scrollbar-button:vertical:increment {
+         background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAQAAAD8fJRsAAAAF0lEQVQY02NgoBf4jwJxSOHQhcNAOgMAWWAP8Rv2U3UAAAAASUVORK5CYII=");
+         }
+         ::-webkit-scrollbar-button:horizontal:increment:start,
+         .scroll::-webkit-scrollbar-button:horizontal:increment:start {
+         display: none;
+         }
+         ::-webkit-scrollbar-button:horizontal:decrement:end,
+         .scroll::-webkit-scrollbar-button:horizontal:decrement:end {
+         display: none;
+         }
+         ::-webkit-scrollbar-button:vertical:increment:start,
+         .scroll::-webkit-scrollbar-button:vertical:increment:start {
+         display: none;
+         }
+         ::-webkit-scrollbar-button:vertical:decrement:end,
+         .scroll::-webkit-scrollbar-button:vertical:decrement:end {
+         display: none;
+         }
+         ::-webkit-scrollbar-button:active,
+         .scroll::-webkit-scrollbar-button:active {
+         border-top: 0.1vw solid #868a8e;
+         border-left: 0.1vw solid #868a8e;
+         border-bottom: 0.1vw solid #868a8e;
+         border-right: 0.1vw solid #868a8e;
+         box-shadow: none;
+         }
+         footer {
+         text-align: center;
+         padding: 1vw;
+         border: 2vw ;
+         margin-top: 0.5vw;
+         margin-left: 0.5vw;
+         margin-right: 1vw;
+         margin-bottom: 1vw;
+         background-image: linear-gradient(to bottom, gray, lightgray);
+         border-style: outset;
+         border-width: 0.3vw; thick;
+         border-color: LightGray;
+         border-radius: 1vw;
+         overflow: auto;
+         }
+         .container {
+         display: flex;
+         }
+         @keyframes slide {
+         0% {
+         background-position-x: 0%;
+         }
+         100% {
+         background-position-x: 300vw;
+         }
+         }
+         .text {
+         background-size: 300vw 300vw;
+         text-align: -webkit-center;
+         background: repeating-linear-gradient(-45deg, red 0%, yellow 7.14%, #0f0 14.28%, #0ff 21.42%, cyan 28.56%, blue 35.7%, magenta 42.84%, red 50%);
+         -webkit-animation: 'slide' 10s infinite linear forwards;
+         -webkit-text-fill-color: transparent;
+         -webkit-background-clip: text;
+         }
+         @keyframes squiggly-anim {
+         0% {
+         -webkit-filter: url("#squiggly-0");
+         filter: url("#squiggly-0");
+         }
+         25% {
+         -webkit-filter: url("#squiggly-1");
+         filter: url("#squiggly-1");
+         }
+         50% {
+         -webkit-filter: url("#squiggly-2");
+         filter: url("#squiggly-2");
+         }
+         75% {
+         -webkit-filter: url("#squiggly-3");
+         filter: url("#squiggly-3");
+         }
+         100% {
+         -webkit-filter: url("#squiggly-4");
+         filter: url("#squiggly-4");
+         }
+         }
+         #text {
+         animation: squiggly-anim 0.5s linear infinite;
+         }
+         .svg-container {
+         width: 0;
+         height: 0;
+         overflow: hidden;
+         }
+         .scripted {
+         filter: drop-shadow( 0 3px #9a6fb0) drop-shadow( 2px 0 #9a6fb0) drop-shadow( 0 -1px #ffa9c2) drop-shadow( -1px 0 #9a6fb0) drop-shadow( 0 5px white) drop-shadow( 5px 0 white) drop-shadow( 0 -5px white) drop-shadow( -5px 0 white) drop-shadow(1px 1px 0 rgba(172,172,172,0.6)) drop-shadow(1px 1px 0 rgba(172,172,172,0.6)) drop-shadow( 0 0 2px #424242);
+         background-image: linear-gradient(to bottom, red, orange, yellow, green, blue, indigo, purple);
+         -webkit-background-clip: text;
+         color: transparent;
+         font-family: ecoder;
+         } 
+         @font-face { 
+         font-family: ecoder;
+         src: url(https://dl.dropbox.com/s/2wrgv8i3jsqkv6p/Ecoder-Italic.otf);
+         }
+         .texthover{
+         transition: 0.5s;
+         }
+         .texthover:hover{
+         letter-spacing: 7px;
+         }
+         #tilt {
+         text-align: center;
+         animation: tilt 5s infinite alternate;
+         }
+         @keyframes tilt {
+         from { transform: rotate(2deg); }
+         to { transform: rotate(-2deg); }
+         }
+         #sodabounce {
+         -webkit-animation: pop 1s ease-in-out infinite alternate;
+         animation: pop 1s ease-in-out infinite alternate;
+         -moz-animation: pop 1s ease-in-out infinite alternate;
+         }
+         @keyframes pop {
+         from {
+         transform:scale(0.95)
+         }
+         50% {
+         transform:scale(1)
+         }
+         to {
+         transform:scale(0.95)
+         }
+         }
+         @-webkit-keyframes pop {
+         from {
+         -webkit-transform:scale(0.95)
+         }
+         50% {
+         -webkit-transform:scale(1)
+         }
+         to {
+         -webkit-transform:scale(0.95)
+         }
+         }
+         .element {
+         transition: transform 300ms linear; 
+         filter: drop-shadow(1px 1px 0 purple) 
+         drop-shadow(-1px 1px 0 purple) 
+         drop-shadow(0 2px 0 purple) 
+         drop-shadow(0 -1px 0 purple) 
+         drop-shadow(0 1px 1.5px purple) 
+         drop-shadow(0 -1px 1.5px purple) 
+         drop-shadow(1px -1px 1.5px purple) 
+         drop-shadow(-1px -1px 1.5px purple);     
+         }
+         .element:hover {
+         transform: rotate(360deg); 
+         }
+         .pinky {
+         border-width:8px;
+         border-style:solid;
+         border-image: url("https://i.ibb.co/h1Q3bFn/83-B27704-CEA1-4-B8-F-BF79-90-D624-EDC6-F6.png") 8 fill round;
+         }
+         }
+      </style>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>【★WELCOME TO COMPUTERSODA★】 </title>
+      <link rel="icon"  href="/icons/favicon.ico">
+   </head>
+   <body class="crt" onload="setInterval(step,100)">
+      <script src="https://unpkg.com/cursor-effects@latest/dist/browser.js"></script>
+      <script>
+         new cursoreffects.rainbowCursor({
+         length: 12,
+         colors: ["red", "orange", "yellow", "green", "blue", "indigo", "purple"],
+         size: 4,
+         });
+      </script>
+      <span class="svg-container">
+         <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="0" height="0">
+            <defs>
+               <filter id="squiggly-0">
+                  <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="0" />
+                  <feDisplacementMap id="displacement" in="SourceGraphic" in2="noise" scale="6" />
+               </filter>
+               <filter id="squiggly-1">
+                  <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="1" />
+                  <feDisplacementMap in="SourceGraphic" in2="noise" scale="8" />
+               </filter>
+               <filter id="squiggly-2">
+                  <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="2" />
+                  <feDisplacementMap in="SourceGraphic" in2="noise" scale="6" />
+               </filter>
+               <filter id="squiggly-3">
+                  <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="3" />
+                  <feDisplacementMap in="SourceGraphic" in2="noise" scale="8" />
+               </filter>
+               <filter id="squiggly-4">
+                  <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="4" />
+                  <feDisplacementMap in="SourceGraphic" in2="noise" scale="6" />
+               </filter>
+            </defs>
+         </svg>
+      </span>
+      <center>
+         <div>
+            <h1 title="Welcome :) " style="font-size:3vw" id="text" class="text texthover" >WELCOME TO MY WEBSITE</h1>
+            <h1 style="font-size:3.5vw" id="tilt" class="scripted">COMPUTER SODA</h1>
+         </div>
+         <div class="marquee" style="position:absolute;left:4vw;">
+            <marquee behavior="scroll" direction="down">
+               <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkieartist.gif">
+               <br>
+               <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkieautistic.gif">
+               <br>
+               <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiecringeandproud.webp">
+               <br>
+               <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiedroppedonhead.gif">
+               <br>
+               <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkieilikepans.webp">
+               <br>
+               <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkieinternetaddict.gif">
+               <br>
+               <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkieloserandproud.gif">
+               <br>
+               <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiemeow.gif">
+               <br>
+               <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiemusicislife.gif">
+               <br>
+               <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkieneocities.webp">
+               <br>
+               <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkieonlinebitch.gif">
+               <br>
+               <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiepanpride.gif">
+               <br>
+               <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkieselfexpression.gif">
+               <br>
+               <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiesleepcoffin.gif">
+               <br>
+               <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkietrans1.gif">
+               <br>
+               <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkietrans2.gif">
+               <br>
+               <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkieundead.gif">
+               <br>
+               <img style="width:12vw;height:1.5vw;" src="/blinkies/blinkiewebsitegirl.gif">
+               <br>
+            </marquee>
+         </div>
+         <img style="position:absolute;width:60vw;height:60vw;z-index:-1;bottom:8vw;right:20vw" src="/art/computersodaart2.png">
+         <div class="pinky" style="background-color:hotpink;width:25vw;font-size:1.1vw;">
+            <p>Welcome To Computersoda</p>
+            <p>Click The Icon To Continue To The Main Site</p>
+            <p style="color:blue;">!WARNING!</p>
+            <p style="color:blue;">This website is NOT meant to be viewed on mobile devices, it was made with computer viewing in mind, also, this website contains swearing, political stuff, background music, and some flashing lights, so proceed with caution.</p>
+            <p style="color:green;">Pages might load slowly because of how much stuff there is, sorry :/ </p>
+         </div>
+         <div style="width:fit-content;height:fit-content;margin-top:-1vw;" class="element">
+            <a href="https://computersoda.neocities.org/home"> <img title="Click Me :3 " id="sodabounce" onmouseover="mouseoversound.playclip()" style="width:20vw;height:20vw;padding:1vw;margin:1vw;" src="/icons/apple-touch-icon.png"> </a>
+         </div>
+      </center>
+      <br>
+      <br>
+      <br>
+      <button onclick="document.write()" style="border:1vw;background-image:linear-gradient(to bottom, gold, yellow);border-style: outset;border-width: 0.3vw; thick;border-color: yellow;border-radius: 1vw;overflow: auto;font-family:courier new;">Self Destruct Button </button>
+      <script type="text/javascript">
+         // <![CDATA[
+         var colours=new Array('#f00', '#f06', '#f0f', '#f6f', '#f39', '#f9c');
+         var minisize=16; 
+         var maxisize=28; 
+         var hearts=66;
+         var over_or_under="over"; 
+         
+         
+         var x=ox=400;
+         var y=oy=300;
+         var swide=800;
+         var shigh=600;
+         var sleft=sdown=0;
+         var herz=new Array();
+         var herzx=new Array();
+         var herzy=new Array();
+         var herzs=new Array();
+         var kiss=false;
+         
+         if (typeof('addRVLoadEvent')!='function') function addRVLoadEvent(funky) {
+           var oldonload=window.onload;
+           if (typeof(oldonload)!='function') window.onload=funky;
+           else window.onload=function() {
+             if (oldonload) oldonload();
+             funky();
+           }
+         }
+         
+         addRVLoadEvent(mwah);
+         
+         function mwah() { if (document.getElementById) {
+           var i, heart;
+           for (i=0; i<hearts; i++) {
+             heart=createDiv("auto", "auto");
+             heart.style.visibility="hidden";
+         	heart.style.zIndex=(over_or_under=="over")?"1001":"0";
+             heart.style.color=colours[i%colours.length];
+         	heart.style.pointerEvents="none";
+             if (navigator.appName=="Microsoft Internet Explorer") heart.style.filter="alpha(opacity=75)";
+             else heart.style.opacity=0.75;
+             heart.appendChild(document.createTextNode(String.fromCharCode(9733)));
+             document.body.appendChild(heart);
+             herz[i]=heart;
+         	herzy[i]=false;
+           }
+           set_scroll();
+           set_width();
+           herzle();
+         }}
+         
+         function herzle() {
+           var c;
+           if (Math.abs(x-ox)>1 || Math.abs(y-oy)>1) {
+             ox=x;
+             oy=y;
+             for (c=0; c<hearts; c++) if (herzy[c]===false) {
+         	  herz[c].firstChild.nodeValue=String.fromCharCode(9733);
+               herz[c].style.left=(herzx[c]=x-minisize/2)+"px";
+               herz[c].style.top=(herzy[c]=y-minisize)+"px";
+               herz[c].style.fontSize=minisize+"px";
+         	  herz[c].style.fontWeight='normal';
+               herz[c].style.visibility='visible';
+               herzs[c]=minisize;
+               break;
+             }
+           }
+           for (c=0; c<hearts; c++) if (herzy[c]!==false) blow_me_a_kiss(c);
+           setTimeout("herzle()", 40);
+         }
+         
+         document.onmousedown=pucker;
+         document.onmouseup=function(){clearTimeout(kiss);};
+         
+         function pucker() {
+           ox=-1;
+           oy=-1;
+           kiss=setTimeout('pucker()', 100);
+         }
+         
+         function blow_me_a_kiss(i) {
+           herzy[i]-=herzs[i]/minisize+i%2;
+           herzx[i]+=(i%5-2)/5;
+           if (herzy[i]<sdown-herzs[i] || herzx[i]<sleft-herzs[i] || herzx[i]>sleft+swide-herzs[i]) {
+             herz[i].style.visibility="hidden";
+             herzy[i]=false;
+           }
+           else if (herzs[i]>minisize+2 && Math.random()<.5/hearts) break_my_heart(i);
+           else {
+             if (Math.random()<maxisize/herzy[i] && herzs[i]<maxisize) herz[i].style.fontSize=(++herzs[i])+"px";
+             herz[i].style.top=herzy[i]+"px";
+             herz[i].style.left=herzx[i]+"px";
+           }
+         }
+         
+         function break_my_heart(i) {
+           var t;
+           herz[i].firstChild.nodeValue=String.fromCharCode(9733);
+           herz[i].style.fontWeight='bold';
+           herzy[i]=false;
+           for (t=herzs[i]; t<=maxisize; t++) setTimeout('herz['+i+'].style.fontSize="'+t+'px"', 60*(t-herzs[i]));
+           setTimeout('herz['+i+'].style.visibility="hidden";', 60*(t-herzs[i]));
+         }
+         
+         document.onmousemove=mouse;
+         function mouse(e) {
+           if (e) {
+             y=e.pageY;
+             x=e.pageX;
+           }
+           else {
+             set_scroll();
+             y=event.y+sdown;
+             x=event.x+sleft;
+           }
+         }
+         
+         window.onresize=set_width;
+         function set_width() {
+           var sw_min=999999;
+           var sh_min=999999;
+           if (document.documentElement && document.documentElement.clientWidth) {
+             if (document.documentElement.clientWidth>0) sw_min=document.documentElement.clientWidth;
+             if (document.documentElement.clientHeight>0) sh_min=document.documentElement.clientHeight;
+           }
+           if (typeof(self.innerWidth)=='number' && self.innerWidth) {
+             if (self.innerWidth>0 && self.innerWidth<sw_min) sw_min=self.innerWidth;
+             if (self.innerHeight>0 && self.innerHeight<sh_min) sh_min=self.innerHeight;
+           }
+           if (document.body.clientWidth) {
+             if (document.body.clientWidth>0 && document.body.clientWidth<sw_min) sw_min=document.body.clientWidth;
+             if (document.body.clientHeight>0 && document.body.clientHeight<sh_min) sh_min=document.body.clientHeight;
+           }
+           if (sw_min==999999 || sh_min==999999) {
+             sw_min=800;
+             sh_min=600;
+           }
+           swide=sw_min;
+           shigh=sh_min;
+         }
+         
+         window.onscroll=set_scroll;
+         function set_scroll() {
+           if (typeof(self.pageYOffset)=='number') {
+             sdown=self.pageYOffset;
+             sleft=self.pageXOffset;
+           }
+           else if (document.body && (document.body.scrollTop || document.body.scrollLeft)) {
+             sdown=document.body.scrollTop;
+             sleft=document.body.scrollLeft;
+           }
+           else if (document.documentElement && (document.documentElement.scrollTop || document.documentElement.scrollLeft)) {
+             sleft=document.documentElement.scrollLeft;
+             sdown=document.documentElement.scrollTop;
+           }
+           else {
+             sdown=0;
+             sleft=0;
+           }
+         }
+         
+         function createDiv(height, width) {
+           var div=document.createElement("div");
+           div.style.position="absolute";
+           div.style.height=height;
+           div.style.width=width;
+           div.style.overflow="hidden";
+           div.style.backgroundColor="transparent";
+           return (div);
+         }
+         // ]]>
+      </script>
+      <script>
+         var b = document.body;
+         var imgurl = "/graphics/graphicsevenup2.gif";
+         var size = [10, 20];
+         function rand(min, max)
+         {
+         return Math.floor(Math.random() * (max - min + 1) + min)
+         }
+         function getSize()
+         {
+         return rand(size[0], size[1]);
+         }
+         function lerp(a,b,f)
+         {
+         return (b-a)*f+a;
+         }
+         function heart(x,y)
+         {
+         var s = getSize();
+         x -= s/2;
+         y -= s/2;
+         x = Math.floor(x) + rand(-5, 5);
+         y = Math.floor(y) + rand(-5, 5);
+         var fx = x + rand(-40, 40);
+         var fy = y + rand(-40, 40);
+         var i = document.createElement("img");
+         i.src = imgurl;
+         i.style = `pointer-events: none; position: fixed; width: ${s}px; left: ${x}px; top: ${y}px; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; z-index: 1000000;`;
+         b.appendChild(i);
+         var f = 0;
+         var interval;
+         interval = setInterval(function() {
+         var _x = Math.floor(lerp(x, fx, f));
+         var _y = Math.floor(lerp(y, fy, f));
+         i.style = `pointer-events: none; position: fixed; width: ${s}px; left: ${_x}px; top: ${_y}px; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; z-index: 1000000;`;
+         i.style.opacity = 1-f;
+         f += 0.01;
+         if (f > 1)
+         {
+         clearInterval(interval);
+         b.removeChild(i);
+         }
+         }, 10);
+         }
+         function bro(x,y)
+         {
+         for (var i = 0; i < 5; i++)
+         {
+         heart(x,y);
+         }
+         }
+         b.addEventListener("click", function(event){
+         var x = event.clientX;
+         var y = event.clientY;
+         bro(x,y);
+         });
+         
+           
+      </script>
+      <script type="text/javascript">
+         message = "【★WELCOME TO COMPUTERSODA★】 ";
+         function step() {
+         message = message.substr(1) + message.substr(0,1);
+         document.title = message.substr(0,15);
+         }
+      </script>
+      <script>
+         var html5_audiotypes={ 
+         "mp3": "audio/mpeg",
+         "mp4": "audio/mp4",
+         "ogg": "audio/ogg",
+         "wav": "audio/wav"
+         }
+          
+         function createsoundbite(sound){
+         var html5audio=document.createElement('audio')
+         if (html5audio.canPlayType){ 
+         for (var i=0; i<arguments.length; i++){
+         var sourceel=document.createElement('source')
+         sourceel.setAttribute('src', arguments[i])
+         if (arguments[i].match(/\.(\w+)$/i))
+         sourceel.setAttribute('type', html5_audiotypes[RegExp.$1])
+         html5audio.appendChild(sourceel)
+         }
+         html5audio.load()
+         html5audio.playclip=function(){
+         html5audio.pause()
+         html5audio.currentTime=0
+         html5audio.play()
+         }
+         return html5audio
+         }
+         else{
+         return {playclip:function(){throw new Error("Your browser doesn't support HTML5 audio unfortunately")}}
+         }
+         }
+          
+         
+          
+         var mouseoversound=createsoundbite("https://files.catbox.moe/uoh3dm.mp3")
+         var clicksound=createsoundbite("https://files.catbox.moe/uoh3dm.mp3")
+          
+      </script>
+   </body>
+</html>
